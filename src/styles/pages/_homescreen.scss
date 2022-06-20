@@ -1,0 +1,22 @@
+.home-screen {
+
+    .upper-screen {
+        display: flex;
+        height: calc(100vh - 61px);
+    }
+
+    .main-screen {
+        width: 100%;
+    }
+
+    nav {
+        background-color: black;
+        color: white;
+        display: flex;
+        flex-direction: column;
+
+        >* {
+            padding: 20px;
+        }
+    }
+}

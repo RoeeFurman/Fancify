@@ -9,5 +9,10 @@
 
 
 // PAGES
+@import "pages/homepage";
+@import "pages/searchpage";
+@import "pages/homescreen";
 
 // COMPONENTS
+@import "components/searchbar";
+@import "components/player";

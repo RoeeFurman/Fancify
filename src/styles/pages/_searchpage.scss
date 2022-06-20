@@ -1,0 +1,43 @@
+.search-page {
+    background-color: rgb(45, 42, 42);
+    height: 100%;
+    width: 100%;
+
+    .title {
+        color: white;
+        font-weight: 900;
+        font-size: 24px;
+
+    }
+
+    .result {
+        color: white;
+        min-height: 56px;
+        max-width: 600px;
+        overflow: visible;
+        margin: 30px 0px 0 0;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+
+        img {
+            height: 40px;
+            width: 40px;
+        }
+
+        .result-titles {
+            margin-left: 10px;
+
+            h2 {
+                max-width: 400px;
+                font-size: 16px;
+                font-weight: 600;
+                line-height: 24px;
+            }
+
+            h3 {
+                font-size: 14px;
+            }
+        }
+    }
+}

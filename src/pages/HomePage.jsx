@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
+import { SearchBar } from "../components/SearchBar";
+import ReactPlayer from "react-player/youtube";
 
 export const HomePage = () => {
+  const [count, setCount] = useState(0);
+  const [data, setData] = useState(null);
 
-    return (
-        <main>
-            <h1>hello furman</h1>
-        </main>
-    )
-}
+  useEffect(() => {}, []);
+
+  return (
+    <div>
+      <SearchBar></SearchBar>
+    </div>
+  );
+};
