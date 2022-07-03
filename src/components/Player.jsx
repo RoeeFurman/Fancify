@@ -86,18 +86,18 @@ export const Player = ({ song }) => {
             height="1px"
             width="1px"
           />
-          <button onClick={() => setPlaying(!isPlaying)}>
-            {isPlaying ? (
-              <i class="fa-solid fa-pause"></i>
-            ) : (
-              <i class="fa-solid fa-play"></i>
-            )}
-          </button>
           <button onClick={() => setLooping(!isLooping)}>
             {isLooping ? (
               <i class="fa-solid fa-xmark"></i>
             ) : (
               <i class="fa-solid fa-repeat"></i>
+            )}
+          </button>
+          <button className="play" onClick={() => setPlaying(!isPlaying)}>
+            {isPlaying ? (
+              <i class="fa-solid fa-pause"></i>
+            ) : (
+              <i class="fa-solid fa-play"></i>
             )}
           </button>
           <button onClick={() => setMute()}>
