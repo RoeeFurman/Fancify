@@ -12,10 +12,6 @@ export const SearchPage = ({ setVideoId }) => {
     console.log(searchSongs.items);
   };
 
-  // const playSong = (id) => {
-  //   console.log(id);
-  // };
-
   return (
     <section className="search-page">
       <SearchBar getResults={getResults} />
@@ -27,9 +23,7 @@ export const SearchPage = ({ setVideoId }) => {
               <li className="result" key={song.etag}>
                 <img src={song.snippet.thumbnails.default.url} />
                 <div className="result-titles">
-                  <h2 onClick={() => setVideoId(song.id.videoId)}>
-                    {song.snippet.title}
-                  </h2>
+                  <h2 onClick={() => setVideoId(song)}>{song.snippet.title}</h2>
                   <h3>{song.snippet.channelTitle}</h3>
                 </div>
               </li>

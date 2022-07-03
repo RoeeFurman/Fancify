@@ -1,19 +1,13 @@
-import React, { useEffect, useState } from "react";
-import {
-  BrowserRouter as Router,
-  Link,
-  Route,
-  useRouteMatch,
-  useParams,
-} from "react-router-dom";
+import React, { useState } from "react";
+import { Link, Route } from "react-router-dom";
 import { Player } from "../components/Player";
 import { SearchPage } from "../pages/SearchPage";
 
 export const HomeScreen = () => {
-  const [currSongId, setCurrSongId] = useState(null);
+  const [currSong, setCurrSongId] = useState(null);
 
   const setVideoId = (id) => {
-    console.log(id);
+    console.log(id, "currsongid");
     setCurrSongId(id);
   };
 
@@ -32,7 +26,7 @@ export const HomeScreen = () => {
           </Route>
         </div>
       </div>
-      <Player songId={currSongId} />
+      <Player song={currSong} />
     </section>
   );
 };
