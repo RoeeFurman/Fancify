@@ -1,13 +1,16 @@
+import './styles/style.scss'
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
-import './styles/style.scss'
-
+import Amplify from 'aws-amplify';
+import awsconfig from './aws-exports'
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+Amplify.configure(awsconfig)
 root.render(
-    <App />
+        <App />
 );
 
 // If you want your app to work offline and load faster, you can change
