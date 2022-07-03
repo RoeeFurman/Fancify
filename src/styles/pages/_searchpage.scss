@@ -2,8 +2,10 @@
     background-color: rgb(45, 42, 42);
     height: 100%;
     width: 100%;
+    padding: 10px;
 
     .title {
+        padding: 5px;
         color: white;
         font-weight: 900;
         font-size: 24px;
@@ -15,7 +17,7 @@
         min-height: 56px;
         max-width: 600px;
         overflow: visible;
-        margin: 30px 0px 0 0;
+        margin: 5px 0px 0 0;
         display: flex;
         align-items: center;
         padding: 10px;

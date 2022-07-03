@@ -6,13 +6,15 @@ export const SearchBar = ({ getResults }) => {
   return (
     <div className="search-bar">
       <span>
-        Search
         <input
           name="text"
           value={song}
           onChange={(e) => setSong(e.target.value)}
+          placeholder="Artists, songs, or podcasts"
         />
-        <button onClick={() => getResults(song)}>Search</button>
+        <button className="search-btn" onClick={() => getResults(song)}>
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
       </span>
     </div>
   );

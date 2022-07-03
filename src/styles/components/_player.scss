@@ -6,7 +6,8 @@
     width: 100%;
     position: fixed;
     bottom: 0;
-    background-color: #fff;
+    background-color: $player-bg;
+    color: $main-white;
 
     button {
         margin: 10px 10px;
@@ -34,11 +35,19 @@
             h4 {
                 max-width: 300px;
                 font-size: 14px;
+                max-width: 200px;
+                white-space: nowrap;
+                overflow: hidden;
                 text-overflow: ellipsis;
             }
 
             h3 {
                 font-size: 11px;
+                color: $player-scnd-txt;
+                max-width: 200px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
         }
 
@@ -50,13 +59,137 @@
         align-items: center;
         flex-grow: 1;
 
+        .actions {
+            button {
+                background: none;
+                border: none;
+                font-size: 20px;
+            }
+        }
+
         .duration {
             display: flex;
+            align-items: center;
+            width: 60%;
+
+            h4 {
+                min-width: 70px;
+                text-align: center;
+            }
+
+            input[type=range] {
+                -webkit-appearance: none;
+                margin: 1px 1px;
+                height: 1px;
+                width: 100%;
+            }
+
+            input[type=range]:focus {
+                outline: none;
+            }
+
+            input[type=range]::-webkit-slider-runnable-track {
+                width: 100%;
+                height: 4px;
+                cursor: pointer;
+                animate: 0.2s;
+                box-shadow: 0px 0px 0px #000000;
+                background: #5e5e5e;
+                border-radius: 0px;
+                border: 0px solid #000000;
+
+                &:hover {
+                    background-color: $main-green;
+
+                }
+            }
+
+            input[type=range]::-webkit-slider-thumb {
+                box-shadow: 0px 0px 1px #000000;
+                border: 0px solid #ffffff;
+                height: 4px;
+                width: 4px;
+                border-radius: 4px;
+                background: $main-white;
+                cursor: pointer;
+                -webkit-appearance: none;
+                margin-top: 0px;
+            }
+
+            input[type=range]:focus::-webkit-slider-runnable-track {
+                background: #5e5e5e;
+            }
+
+            input[type=range]::-moz-range-track {
+                width: 100%;
+                height: 4px;
+                cursor: pointer;
+                animate: 0.2s;
+                box-shadow: 0px 0px 0px #000000;
+                background: #5e5e5e;
+                border-radius: 0px;
+                border: 0px solid #000000;
+
+
+            }
+
+            input[type=range]::-moz-range-thumb {
+                box-shadow: 0px 0px 1px #000000;
+                border: 0px solid #ffffff;
+                height: 4px;
+                width: 4px;
+                border-radius: 4px;
+                background: #FFFFFF;
+                cursor: pointer;
+            }
+
+            input[type=range]::-ms-track {
+                width: 100%;
+                height: 4px;
+                cursor: pointer;
+                animate: 0.2s;
+                background: transparent;
+                border-color: transparent;
+                color: transparent;
+
+
+            }
+
+            input[type=range]::-ms-fill-lower {
+                background: $main-green;
+                border: 0px solid #000000;
+                border-radius: 0px;
+                box-shadow: 0px 0px 0px #000000;
+            }
+
+            input[type=range]::-ms-fill-upper {
+                background: $main-green;
+                border: 0px solid #000000;
+                border-radius: 0px;
+                box-shadow: 0px 0px 0px #000000;
+            }
+
+            input[type=range]::-ms-thumb {
+                box-shadow: 0px 0px 1px #000000;
+                border: 0px solid #ffffff;
+                height: 4px;
+                width: 4px;
+                border-radius: 4px;
+                background: #FFFFFF;
+                cursor: pointer;
+            }
+
+            input[type=range]:focus::-ms-fill-lower {
+                background: $main-green;
+            }
+
+            input[type=range]:focus::-ms-fill-upper {
+                background: #5e5e5e;
+            }
         }
     }
 
     .right-player {
         flex-grow: 0;
-
     }
 }

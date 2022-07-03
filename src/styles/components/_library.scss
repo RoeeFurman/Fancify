@@ -1,0 +1,23 @@
+.library {
+    background: rgb(255, 204, 0);
+    background: linear-gradient(180deg, rgba(255, 204, 0, 1) 0%, rgba(137, 112, 13, 1) 23%, rgba(86, 72, 18, 1) 45%, rgba(24, 24, 24, 1) 61%);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    h1 {
+        font-weight: 800;
+    }
+
+
+    .results {
+        padding: 20px;
+        margin-top: 20px;
+        height: 50%;
+        width: 70%;
+        background-color: $player-scnd-txt;
+        opacity: 0.6;
+    }
+}
