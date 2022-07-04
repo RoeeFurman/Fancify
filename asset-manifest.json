@@ -1,19 +1,17 @@
 {
   "files": {
-    "main.css": "/Fancify/static/css/main.fb2b1cb4.css",
-    "main.js": "/Fancify/static/js/main.11a7009a.js",
-    "static/js/787.be2d8d25.chunk.js": "/Fancify/static/js/787.be2d8d25.chunk.js",
+    "main.css": "/Fancify/static/css/main.5c38c75c.css",
+    "main.js": "/Fancify/static/js/main.cd82024c.js",
     "service-worker.js": "/Fancify/service-worker.js",
     "static/media/GothamLight.ttf": "/Fancify/static/media/GothamLight.03e7ff609ba3bf798fa4.ttf",
     "static/media/GothamMedium.ttf": "/Fancify/static/media/GothamMedium.0a910c0b9d50be6aa3dc.ttf",
     "static/media/GothamBold.ttf": "/Fancify/static/media/GothamBold.108854bb27dee2dce854.ttf",
     "index.html": "/Fancify/index.html",
-    "main.fb2b1cb4.css.map": "/Fancify/static/css/main.fb2b1cb4.css.map",
-    "main.11a7009a.js.map": "/Fancify/static/js/main.11a7009a.js.map",
-    "787.be2d8d25.chunk.js.map": "/Fancify/static/js/787.be2d8d25.chunk.js.map"
+    "main.5c38c75c.css.map": "/Fancify/static/css/main.5c38c75c.css.map",
+    "main.cd82024c.js.map": "/Fancify/static/js/main.cd82024c.js.map"
   },
   "entrypoints": [
-    "static/css/main.fb2b1cb4.css",
-    "static/js/main.11a7009a.js"
+    "static/css/main.5c38c75c.css",
+    "static/js/main.cd82024c.js"
   ]
 }
