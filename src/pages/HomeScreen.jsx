@@ -33,11 +33,11 @@ export const HomeScreen = () => {
             <Library />
           </Route>
           <Route path="/screen/search">
-            <SearchPage setVideoId={setVideoId} />
+            <SearchPage />
           </Route>
         </div>
       </div>
-      <Player song={currSong} />
+      <Player />
     </section>
   );
 };
