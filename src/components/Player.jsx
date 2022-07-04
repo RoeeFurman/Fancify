@@ -35,13 +35,13 @@ class _Player extends React.Component {
     console.log(e.target.value, "e");
     console.log(this.state.played);
     this.setState({ played: e.target.value });
-    this.player.seekTo(e.target.value * this.state.duration);
+    this.player.current.seekTo(e.target.value * this.state.duration);
   };
 
   setStop = () => {
     this.setState({ isPlaying: false });
     this.setState({ played: 0 });
-    this.player.seekTo(0);
+    this.player.current.seekTo(0);
   };
 
   setMute = () => {
@@ -49,7 +49,6 @@ class _Player extends React.Component {
     if (!this.state.isMuted) this.setState({ volume: 0 });
     else this.setState({ volume: 0.9 });
     this.setState({ isMuted: !this.state.isMuted });
-    // setMuted(!isMuted);
   };
 
   toggleLooping = () => {
@@ -64,7 +63,7 @@ class _Player extends React.Component {
     const { state, props } = this;
     const { isPlaying, isLooping, isMuted, volume, played, duration } =
       this.state;
-
+    this.player = React.createRef();
     return (
       <>
         {this.props.song && (
@@ -72,19 +71,10 @@ class _Player extends React.Component {
             {console.log(this.props.song)}
             {this.props.song && (
               <div className="display-details">
-                <img src={this.props.song?.snippet.thumbnails.default.url} />
+                <img src={this.props.song.imgUrl} />
                 <div className="result-titles">
-                  <h4>{this.props.song?.snippet.title}</h4>
-                  <h3>{this.props.song?.snippet.channelTitle}</h3>
-                </div>
-              </div>
-            )}
-            {!this.props.song && (
-              <div className="display-details">
-                <img src="https://i.stack.imgur.com/zeJPU.png" />
-                <div className="result-titles">
-                  <h4>Random song</h4>
-                  <h3>Random Artist</h3>
+                  <h4>{this.props.song?.title}</h4>
+                  <h3>{this.props.song?.channelTitle || ""}</h3>
                 </div>
               </div>
             )}
@@ -93,10 +83,7 @@ class _Player extends React.Component {
                 <ReactPlayer
                   ref={this.player}
                   className="screen"
-                  url={
-                    "https://www.youtube.com/watch?v=" +
-                    this.props.song?.id.videoId
-                  }
+                  url={"https://www.youtube.com/watch?v=" + this.props.song?.id}
                   playing={isPlaying}
                   muted={isMuted}
                   volume={volume}
@@ -261,7 +248,7 @@ export const Player = connect(mapStateToProps, mapDispatchToProps)(_Player);
 //       {console.log(this.props.song)}
 //       {this.props.song && (
 //         <div className="display-details">
-//           <img src={this.props.song?.snippet.thumbnails.default.url} />
+//           <img src={this.props.song?.snippet..default.url} />
 //           <div className="result-titles">
 //             <h4>{this.props.song?.snippet.title}</h4>
 //             <h3>{this.props.song?.snippet.channelTitle}</h3>

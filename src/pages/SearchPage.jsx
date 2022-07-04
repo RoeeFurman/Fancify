@@ -18,7 +18,13 @@ export const SearchPage = () => {
 
   const setVideoId = (song) => {
     console.log(song);
-    dispatch(setSong(song));
+    const currSongMap = {
+      id: song.id.videoId,
+      imgUrl: song.snippet.thumbnails.default.url,
+      title: song.snippet.title,
+      channelTitle: song.snippet.channelTitle,
+    };
+    dispatch(setSong(currSongMap));
   };
 
   return (
