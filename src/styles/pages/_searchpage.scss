@@ -1,7 +1,5 @@
 .search-page {
     background-color: $search-bg;
-    height: 100vh;
-    width: 100%;
     padding: 10px;
     width: calc(100% - 240px);
     position: absolute;
@@ -60,6 +58,35 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
                 color: $player-scnd-txt;
+            }
+        }
+    }
+
+    .tags-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin: 40px;
+        margin-bottom: 200px;
+
+        .tag-preview {
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+            display: flex;
+            justify-content: start;
+            align-items: flex-start;
+            color: $main-white;
+            // cursor: pointer;
+            padding: 20px;
+            transition: 0.2s;
+
+            h2 {
+                font-weight: 800;
+            }
+
+            &:hover {
+                transform: scale(1.02);
             }
         }
     }

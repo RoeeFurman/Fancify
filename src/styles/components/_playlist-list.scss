@@ -18,6 +18,10 @@
         border-radius: 5px;
         cursor: pointer;
 
+        &:hover {
+            background-color: $card-list-bg-hover;
+        }
+
         h3 {
             max-width: 140px;
             white-space: nowrap;

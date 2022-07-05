@@ -11,7 +11,7 @@ export const Library = () => {
   }, []);
 
   const dispatch = useDispatch();
-  const [playlists, setPlaylists] = useState([]);
+  // const [playlists, setPlaylists] = useState([]);
   const [tags, setTags] = useState([]);
 
   // const loadPlaylists = async () => {
