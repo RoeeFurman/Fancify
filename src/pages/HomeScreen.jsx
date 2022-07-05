@@ -3,6 +3,7 @@ import { Link, Route } from "react-router-dom";
 import { Player } from "../components/Player";
 import { Library } from "../components/Library";
 import { SearchPage } from "../pages/SearchPage";
+import { PlaylistDetails } from "../components/PlaylistDetails";
 
 export const HomeScreen = () => {
   const [currSong, setCurrSongId] = useState(null);
@@ -34,6 +35,9 @@ export const HomeScreen = () => {
           </Route>
           <Route path="/screen/search">
             <SearchPage />
+          </Route>
+          <Route path="/screen/library/:id">
+            <PlaylistDetails />
           </Route>
         </div>
       </div>

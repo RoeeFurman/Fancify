@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import { HomeScreen } from "./pages/HomeScreen.jsx";
 import { HomePage } from "./pages/HomePage.jsx";
+import { PlaylistDetails } from "./components/PlaylistDetails.jsx";
 const App = () => {
   return (
     <div className="App">

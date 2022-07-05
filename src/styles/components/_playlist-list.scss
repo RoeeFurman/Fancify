@@ -1,0 +1,42 @@
+.playlist-list {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, 220px);
+
+    .playlist-card {
+        >* {
+            margin-bottom: 8px;
+        }
+
+        display: flex;
+        flex-direction: column;
+        width: 188px;
+        background-color: $card-list-bg;
+        justify-content: center;
+        padding: 16px;
+        height: 266px;
+        border-radius: 5px;
+        cursor: pointer;
+
+        h3 {
+            max-width: 140px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        h4 {
+            color: $player-scnd-txt;
+            font-size: 14px;
+            max-width: 140px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        img {
+            height: 160px;
+            width: 160px;
+        }
+    }
+}

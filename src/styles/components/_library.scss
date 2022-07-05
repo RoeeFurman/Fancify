@@ -8,40 +8,17 @@
     color: $main-white;
     overflow-y: auto;
     padding: 20px;
+    width: calc(100% - 240px);
+    position: absolute;
+    left: 240px;
 
     h1 {
         font-weight: 800;
         margin: 10px;
     }
 
-    .song-preview {
-        margin: 10px 40px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 30px;
-        cursor: pointer;
-
-        &:hover {
-            background-color: $player-bg;
-        }
-
-
-        .song-details {
-            display: flex;
-            align-items: center;
-        }
-
-        h4 {
-            text-align: left;
-            margin-left: 10px;
-        }
-
-        img {
-            margin-right: 10px;
-            height: 40px;
-            width: 40px;
-            object-fit: cover;
-        }
+    h2 {
+        margin: 12px;
     }
+
 }
