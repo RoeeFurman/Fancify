@@ -19,6 +19,8 @@
     }
 
     nav {
+        font-family: book-bold;
+        font-size: 14px;
         width: 240px;
         background-color: black;
         color: white;
@@ -26,7 +28,13 @@
         flex-direction: column;
         min-height: 100vh;
         position: fixed;
+        padding: 24px;
 
+        a {
+            width: 60%;
+            display: flex;
+            justify-content: space-between;
+        }
 
         .logo {
             width: 130px;
@@ -34,6 +42,7 @@
             align-items: center;
             align-self: center;
             justify-content: center;
+            margin: 0px 0 18px;
 
             h1 {
                 font-weight: 1000;
@@ -48,7 +57,11 @@
         }
 
         >* {
-            padding: 20px;
+            padding: 0 20px;
+        }
+
+        a {
+            height: 40px;
         }
     }
 }

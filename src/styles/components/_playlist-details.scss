@@ -18,12 +18,13 @@
     }
 
     .playlist-header {
-        padding: 20px;
+
         height: 340px;
         display: flex;
         align-items: center;
         background: linear-gradient(transparent, rgba(0, 0, 0, .5));
         position: relative;
+        padding: 62px 30px 30px;
 
         &:after {
             content: '';
@@ -39,12 +40,13 @@
         }
 
         img {
-            width: 160px;
-            height: 160px;
+            width: 233px;
+            height: 233px;
         }
 
         h1 {
-            font-size: 50px;
+            font-family: gotham-bold;
+            font-size: 96px;
             margin-left: 30px;
             margin-bottom: 10px;
         }

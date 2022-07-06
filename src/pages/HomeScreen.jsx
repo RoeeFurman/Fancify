@@ -4,6 +4,9 @@ import { Player } from "../components/Player";
 import { Library } from "../components/Library";
 import { SearchPage } from "../pages/SearchPage";
 import { PlaylistDetails } from "../components/PlaylistDetails";
+import { MdHomeFilled } from "react-icons/md";
+import { RiSearchLine } from "react-icons/ri";
+import { BsFillPlusSquareFill } from "react-icons/bs";
 
 export const HomeScreen = () => {
   const [currSong, setCurrSongId] = useState(null);
@@ -17,7 +20,7 @@ export const HomeScreen = () => {
     <section className="home-screen">
       <div className="upper-screen">
         <nav>
-          <Link to="/">
+          <div to="/">
             <div className="logo">
               <img
                 className="logo-img"
@@ -25,9 +28,15 @@ export const HomeScreen = () => {
               />
               <h1>Fancify</h1>
             </div>
+          </div>
+          <Link to="/screen/">
+            <MdHomeFilled />
+            Library
           </Link>
-          <Link to="/screen/">Library</Link>
-          <Link to="/screen/search">Search</Link>
+          <Link to="/screen/search">
+            <RiSearchLine />
+            Search
+          </Link>
         </nav>
         <div className="main-screen">
           <Route exact path="/screen/">
