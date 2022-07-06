@@ -1,6 +1,16 @@
-import React, { useRef, useState } from "react";
+import React, { startTransition, useRef, useState, useEffect } from "react";
+import { FaForward, FaBackward, FaHeart } from "react-icons/fa";
 import ReactPlayer from "react-player/youtube";
 import { connect } from "react-redux";
+
+import {
+  setPlayer,
+  setSong,
+  togglePlay,
+  changeSong,
+  setCurrTimePass,
+  toggleShuffle,
+} from "../store/actions/audio-player.action";
 
 class _Player extends React.Component {
   state = {
@@ -14,12 +24,13 @@ class _Player extends React.Component {
   };
 
   handleDuration = (duration) => {
-    console.log("onDuration", duration);
+    // console.log("onDuration", duration);
     this.setState({ duration });
   };
 
   handleProgress = (state) => {
     console.log("onProgress", state);
+    if (state.played > 0.995) this.onForward();
     this.setState({ played: state.played });
 
     if (!this.state.progress) {
@@ -32,8 +43,8 @@ class _Player extends React.Component {
   };
 
   handleSeekChange = (e) => {
-    console.log(e.target.value, "e");
-    console.log(this.state.played);
+    // console.log(e.target.value, "e");
+    // console.log(this.state.played);
     this.setState({ played: e.target.value });
     this.player.current.seekTo(e.target.value * this.state.duration);
   };
@@ -42,6 +53,25 @@ class _Player extends React.Component {
     this.setState({ isPlaying: false });
     this.setState({ played: 0 });
     this.player.current.seekTo(0);
+  };
+
+  onForward = () => {
+    const idx = this.props.miniPlaylist?.songs.findIndex(
+      (song) => song.id === this.props.song.id
+    );
+    if (idx === this.props.miniPlaylist?.songs.length - 1) {
+      this.setStop();
+      return;
+    } else this.props.setSong(this.props.miniPlaylist?.songs[idx + 1]);
+  };
+
+  onBackward = () => {
+    const idx = this.props.miniPlaylist?.songs.findIndex(
+      (song) => song.id === this.props.song.id
+    );
+    if (idx === 0) {
+      this.player.current.seekTo(0);
+    } else this.props.setSong(this.props.miniPlaylist?.songs[idx - 1]);
   };
 
   setMute = () => {
@@ -59,22 +89,29 @@ class _Player extends React.Component {
     this.setState({ isPlaying: !this.state.isPlaying });
   };
 
+  observer = () => {
+    useEffect(() => {
+      console.log("hi");
+    }, this.props.song);
+    return null; // component does not render anything
+  };
+
   render() {
     const { state, props } = this;
-    const { isPlaying, isLooping, isMuted, volume, played, duration } =
-      this.state;
+    const { currSongIdx, songs } = props.miniPlaylist;
+    const song = props.song;
+    const { isPlaying, isLooping, isMuted, volume, played, duration } = state;
     this.player = React.createRef();
     return (
       <>
-        {this.props.song && (
+        {song && (
           <div className="player">
-            {console.log(this.props.song)}
-            {this.props.song && (
+            {song && (
               <div className="display-details">
-                <img src={this.props.song.imgUrl} />
+                <img src={song?.imgUrl} />
                 <div className="result-titles">
-                  <h4>{this.props.song?.title}</h4>
-                  <h3>{this.props.song?.channelTitle || ""}</h3>
+                  <h4>{song?.title || ""}</h4>
+                  <h3>{song?.channelTitle || ""}</h3>
                 </div>
               </div>
             )}
@@ -83,7 +120,7 @@ class _Player extends React.Component {
                 <ReactPlayer
                   ref={this.player}
                   className="screen"
-                  url={"https://www.youtube.com/watch?v=" + this.props.song?.id}
+                  url={"https://www.youtube.com/watch?v=" + song?.id}
                   playing={isPlaying}
                   muted={isMuted}
                   volume={volume}
@@ -103,6 +140,7 @@ class _Player extends React.Component {
                     </svg>
                   )}
                 </button>
+                <FaBackward onClick={() => this.onBackward()} />
                 <button className="play" onClick={() => this.setPlaying()}>
                   {isPlaying ? (
                     <svg
@@ -126,6 +164,7 @@ class _Player extends React.Component {
                     </svg>
                   )}
                 </button>
+                <FaForward onClick={() => this.onForward()} />
                 <button onClick={() => this.setMute()}>
                   {isMuted ? (
                     <i className="fa-solid fa-volume-high"></i>
@@ -145,7 +184,7 @@ class _Player extends React.Component {
                 <input
                   type="range"
                   min={0}
-                  max={0.999999}
+                  max={1}
                   step="any"
                   value={played}
                   onChange={this.handleSeekChange}
@@ -179,7 +218,7 @@ function mapStateToProps(state) {
     player: state.audioPlayerModule.player,
     song: state.audioPlayerModule.song,
     isPlaying: state.audioPlayerModule.isPlaying,
-    // miniPlaylist: state.audioPlayerModule.miniPlaylist,
+    miniPlaylist: state.audioPlayerModule.miniPlaylist,
     // currTimePass: state.audioPlayerModule.currTimePass,
     // isShuffled: state.audioPlayerModule.isShuffled,
     // user: state.userModule.user
@@ -189,6 +228,7 @@ const mapDispatchToProps = {
   // setPlayer,
   // togglePlay,
   // changeSong,
+  setSong,
   // setCurrTimePass,
   // toggleShuffle,
   // toggleLike,

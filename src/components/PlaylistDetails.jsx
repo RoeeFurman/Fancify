@@ -23,7 +23,6 @@ export const PlaylistDetails = ({ match }) => {
 
   const getAvgColor = async (url) => {
     const rgb = await getAverageColor(url);
-    console.log(rgb);
     setCurrImgAvgColor(rgb);
     // updateColor(`rgb(${rgb.r},${rgb.g}, ${rgb.b})`);
   };
@@ -42,7 +41,7 @@ export const PlaylistDetails = ({ match }) => {
 
   return (
     <section className="playlist-details">
-      {currPlaylist && currPlaylist && (
+      {currPlaylist && (
         <div
           className="playlist-header"
           style={{

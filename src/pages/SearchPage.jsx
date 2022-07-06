@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { SearchBar } from "../components/SearchBar";
 import { youtubeService } from "../services/youtubeService";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setSong } from "../store/actions/audio-player.action";
 import { playlistService } from "../services/playlistService";
 
@@ -29,7 +29,6 @@ export const SearchPage = () => {
   };
 
   const setVideoId = (song) => {
-    console.log(song);
     const currSongMap = {
       id: song.id.videoId,
       imgUrl: song.snippet.thumbnails.default.url,
