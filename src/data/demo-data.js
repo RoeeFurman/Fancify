@@ -698,7 +698,98 @@ export const PLAYLIST_DATA = [
             "_id": "u100",
             "fullname": "Justin Bieber"
         },
-        "songs": [],
+        "songs": [
+            {
+                "id": "orJSJGHjBLI",
+                "title": "Ed Sheeran - Bad Habits",
+                "imgUrl": "https://yt3.ggpht.com/-syoRcPPGt3NE3TzbKJsefa5Rej4w_lSof-aXSm1Q9cDx5Gyn-Cuus8UKjKBtILs_Bqwgc_i0A=s48-c-k-c0x00ffffff-no-nd-rj",
+                "duration": {
+                    "total": 296,
+                    "display": "4:56"
+                },
+                "idx": 0
+            },
+            {
+                "id": "Il0S8BoucSA",
+                "title": "Shivers",
+                "imgUrl": "https://yt3.ggpht.com/-syoRcPPGt3NE3TzbKJsefa5Rej4w_lSof-aXSm1Q9cDx5Gyn-Cuus8UKjKBtILs_Bqwgc_i0A=s48-c-k-c0x00ffffff-no-nd-rj",
+                "duration": {
+                    "total": 296,
+                    "display": "4:56"
+                },
+                "idx": 0
+            },
+            {
+                "id": "OPf0YbXqDm0",
+                "title": "Mark Ronson - Uptown Funk",
+                "imgUrl": "https://yt3.ggpht.com/ytc/AKedOLQH4eo7atyDIArDAHcuW-H6gOl37G0l9pnqEn_2=s48-c-k-c0x00ffffff-no-rj-mo",
+                "duration": {
+                    "total": 296,
+                    "display": "4:56"
+                },
+                "idx": 0
+            },
+            {
+                "id": "lhGl9D514Bc",
+                "title": "Dennis Lloyd - Never Go Back",
+                "imgUrl": "https://yt3.ggpht.com/ytc/AKedOLRtX9l1PjrcwcuEtut0Yxc7zRoIl3unN_4eMlDWUA=s48-c-k-c0x00ffffff-no-rj-mo",
+                "duration": {
+                    "total": 296,
+                    "display": "4:56"
+                },
+                "idx": 0
+            },
+            {
+                "id": "cXrDnO98TiU",
+                "title": "Dennis Lloyd Act III The Reason",
+                "imgUrl": "https://yt3.ggpht.com/ytc/AKedOLReYbjISdU5TaOmZijK7EzvOOL4U5LUHTB6Cnc=s48-c-k-c0x00ffffff-no-rj",
+                "duration": {
+                    "total": 296,
+                    "display": "4:56"
+                },
+                "idx": 0
+            },
+            {
+                "id": "b3-L5QOxEDM",
+                "title": "תמיר גרינברג - מישהו",
+                "imgUrl": "https://yt3.ggpht.com/ytc/AKedOLReYbjISdU5TaOmZijK7EzvOOL4U5LUHTB6Cnc=s48-c-k-c0x00ffffff-no-rj",
+                "duration": {
+                    "total": 296,
+                    "display": "4:56"
+                },
+                "idx": 0
+            },
+            {
+                "id": "50GO9apOsSA",
+                "title": "שושנים עצובות - עדן חסון ויסמין מועלם (Prod. by Guy Dan)",
+                "imgUrl": "https://yt3.ggpht.com/edBkF60qBzJwV7ZVuJ-G8RwRCvJUAT_1PkuImV2tmMZyEoVnhbO-WQl2MgDKwSuLlnv4wbd-0Y4=s48-c-k-c0x00ffffff-no-rj",
+                "duration": {
+                    "total": 296,
+                    "display": "4:56"
+                },
+                "idx": 0
+            },
+            {
+                "id": "JGwWNGJdvx8",
+                "title": "Ed Sheeran - Shape of You",
+                "imgUrl": "https://yt3.ggpht.com/-syoRcPPGt3NE3TzbKJsefa5Rej4w_lSof-aXSm1Q9cDx5Gyn-Cuus8UKjKBtILs_Bqwgc_i0A=s48-c-k-c0x00ffffff-no-nd-rj",
+                "duration": {
+                    "total": 296,
+                    "display": "4:56"
+                },
+                "idx": 0
+            },
+            {
+                "id": "sWOrd50HYa4",
+                "title": "Ash - Live at Bonjuk Bay",
+                "imgUrl": "https://yt3.ggpht.com/NibvGRDPi7Xv6ET274fGu86EwMhniPyzZUB-rQ1EuToDSelKbqIFXajjwBWuzu4npEOBIXryeQ=s48-c-k-c0x00ffffff-no-nd-rj",
+                "duration": {
+                    "total": 296,
+                    "display": "4:56"
+                },
+                "idx": 0
+            }
+        ],
         "_id": "xjlHK"
     }
 

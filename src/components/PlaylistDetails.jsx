@@ -4,7 +4,8 @@ import { playlistService } from "../services/playlistService";
 import { useDispatch } from "react-redux";
 import { setSong } from "../store/actions/audio-player.action";
 import getAverageColor from "get-average-color";
-import { SearchPage } from "../pages/SearchPage";
+// import { SearchPage } from "../pages/SearchPage";
+import { BsClock } from "react-icons/bs";
 
 export const PlaylistDetails = ({ match }) => {
   //   const history = useHistory();
@@ -23,6 +24,7 @@ export const PlaylistDetails = ({ match }) => {
 
   const getAvgColor = async (url) => {
     const rgb = await getAverageColor(url);
+    console.log(rgb);
     setCurrImgAvgColor(rgb);
     // updateColor(`rgb(${rgb.r},${rgb.g}, ${rgb.b})`);
   };
@@ -42,29 +44,34 @@ export const PlaylistDetails = ({ match }) => {
   return (
     <section className="playlist-details">
       {currPlaylist && (
-        <div
-          className="playlist-header"
-          style={{
-            background: `linear-gradient(180deg, rgba(${currImgAvgColor?.r},${currImgAvgColor?.g},${currImgAvgColor?.b},1) 0%, rgba(24, 24, 24, 1) 93%)`,
-          }}
-        >
-          <img src={currPlaylist.imgUrl} alt={currPlaylist.name} />
-          <div className="titles">
-            <h1>{currPlaylist.name}</h1>
-            <h2>{currPlaylist.description}</h2>
+        <>
+          <div
+            className="playlist-header"
+            style={{
+              backgroundColor: `rgb(${currImgAvgColor?.r},${currImgAvgColor?.g},${currImgAvgColor?.b})`,
+            }}
+          >
+            <img src={currPlaylist.imgUrl} alt={currPlaylist.name} />
+            <div className="titles">
+              <h1>{currPlaylist.name}</h1>
+              <h2>{currPlaylist.description}</h2>
+            </div>
           </div>
-        </div>
+        </>
       )}
       {currPlaylist && (
         <ul>
           <div className="header">
-            <div>#</div>
-            <div>TITLE</div>
-            <div>DURATION</div>
+            <div className="idx">#</div>
+            <div className="song-details">TITLE</div>
+            <div>
+              <BsClock />
+            </div>
           </div>
           {currPlaylist?.songs?.map((song) => (
             <li key={song.id}>
               <div className="song-preview" onClick={() => setVideoId(song)}>
+                <div className="idx">{song.initIdx + 1}</div>
                 <div className="song-details">
                   <img src={song.imgUrl} />
                   <h4>{song.title}</h4>

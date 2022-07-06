@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { SearchBar } from "../components/SearchBar";
 import { youtubeService } from "../services/youtubeService";
 import { useDispatch } from "react-redux";
-import { setSong } from "../store/actions/audio-player.action";
+import { setSong, setMiniPlaylist } from "../store/actions/audio-player.action";
 import { playlistService } from "../services/playlistService";
 
 export const SearchPage = () => {
@@ -36,6 +36,7 @@ export const SearchPage = () => {
       channelTitle: song.snippet.channelTitle,
     };
     dispatch(setSong(currSongMap));
+    dispatch(setMiniPlaylist("Single song", 0, [currSongMap], "Single song"));
   };
 
   return (

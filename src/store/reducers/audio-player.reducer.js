@@ -27,6 +27,7 @@ export function audioPlayerReducer(state = initialState, action) {
         // case 'TOGGLE_PLAY':
         //     return { ...state, isPlaying: action.isPlaying }
         case 'SET_MINI_PLAYLIST':
+            console.log(action.miniPlaylist)
             return { ...state, miniPlaylist: action.miniPlaylist }
         case 'CHANGE_SONG':
             return { ...state, miniPlaylist: { ...state.miniPlaylist, currSongIdx: action.currSongIdx } }

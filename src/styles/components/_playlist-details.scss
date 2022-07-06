@@ -3,13 +3,18 @@
     position: absolute;
     left: 240px;
 
-    background-color: $player-bg;
+    background-color: $search-bg;
     min-height: 100vh;
 
     color: $main-white;
 
     ul {
         margin-bottom: 120px;
+        position: absolute;
+        background-color: transparent;
+        padding: 0 16px;
+        width: 100%;
+
     }
 
     .playlist-header {
@@ -17,6 +22,21 @@
         height: 340px;
         display: flex;
         align-items: center;
+        background: linear-gradient(transparent, rgba(0, 0, 0, .5));
+        position: relative;
+
+        &:after {
+            content: '';
+            // background-color: inherit;
+            height: 300px;
+            background: linear-gradient(180deg, rgba(18, 18, 18, 0.6810925053615196) 3%, rgba(18, 18, 18, 1) 80%);
+            background-color: inherit;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            z-index: 0;
+        }
 
         img {
             width: 160px;
@@ -41,15 +61,20 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 3px 30px;
+        // padding: 3px 30px;
         cursor: pointer;
 
         &:hover {
             background-color: hsla(0, 0%, 100%, .1);
         }
 
+        .idx {
+            width: 10px;
+            flex-basis: 10px;
+        }
 
         .song-details {
+            flex-basis: 90%;
             display: flex;
             align-items: center;
         }
@@ -68,12 +93,25 @@
     }
 
     .header {
+        margin: 10px 40px;
         display: flex;
+        align-items: center;
         justify-content: space-between;
-        width: 90%;
-        margin: auto;
+        padding: 10px 0;
         border-bottom: 1px solid hsla(0, 0%, 100%, .1);
-        height: 25px;
+
+        .idx {
+            width: 10px;
+            flex-basis: 10px;
+        }
+
+        .song-details {
+            flex-basis: 90%;
+            display: flex;
+            align-items: center;
+            margin-left: 90px;
+        }
+
     }
 
 }

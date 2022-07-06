@@ -23,13 +23,17 @@ class _Player extends React.Component {
     volume: 0.9,
   };
 
+  componentDidMount = () => {
+    document.addEventListener("keypress", this.togglePlayByKey);
+  };
+
   handleDuration = (duration) => {
     // console.log("onDuration", duration);
     this.setState({ duration });
   };
 
   handleProgress = (state) => {
-    console.log("onProgress", state);
+    // console.log("onProgress", state);
     if (state.played > 0.995) this.onForward();
     this.setState({ played: state.played });
 
@@ -75,7 +79,7 @@ class _Player extends React.Component {
   };
 
   setMute = () => {
-    console.log("Mute");
+    // console.log("Mute");
     if (!this.state.isMuted) this.setState({ volume: 0 });
     else this.setState({ volume: 0.9 });
     this.setState({ isMuted: !this.state.isMuted });
@@ -89,11 +93,11 @@ class _Player extends React.Component {
     this.setState({ isPlaying: !this.state.isPlaying });
   };
 
-  observer = () => {
-    useEffect(() => {
-      console.log("hi");
-    }, this.props.song);
-    return null; // component does not render anything
+  togglePlayByKey = (key) => {
+    if (key.key === " ") {
+      // key.preventDefault();
+      this.setPlaying();
+    }
   };
 
   render() {
@@ -127,7 +131,7 @@ class _Player extends React.Component {
                   loop={isLooping}
                   onDuration={this.handleDuration}
                   onProgress={this.handleProgress}
-                  onSeek={(e) => console.log("onSeek", e)}
+                  // onSeek={(e) => console.log("onSeek", e)}
                   height="1px"
                   width="1px"
                 />
