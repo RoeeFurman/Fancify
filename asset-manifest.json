@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Fancify/static/css/main.4a1c4237.css",
-    "main.js": "/Fancify/static/js/main.f0c5b461.js",
+    "main.css": "/Fancify/static/css/main.822946f7.css",
+    "main.js": "/Fancify/static/js/main.60425064.js",
     "service-worker.js": "/Fancify/service-worker.js",
     "static/media/GothamLight.ttf": "/Fancify/static/media/GothamLight.03e7ff609ba3bf798fa4.ttf",
     "static/media/GothamMedium.ttf": "/Fancify/static/media/GothamMedium.0a910c0b9d50be6aa3dc.ttf",
     "static/media/GothamBold.ttf": "/Fancify/static/media/GothamBold.108854bb27dee2dce854.ttf",
     "index.html": "/Fancify/index.html",
-    "main.4a1c4237.css.map": "/Fancify/static/css/main.4a1c4237.css.map",
-    "main.f0c5b461.js.map": "/Fancify/static/js/main.f0c5b461.js.map"
+    "main.822946f7.css.map": "/Fancify/static/css/main.822946f7.css.map",
+    "main.60425064.js.map": "/Fancify/static/js/main.60425064.js.map"
   },
   "entrypoints": [
-    "static/css/main.4a1c4237.css",
-    "static/js/main.f0c5b461.js"
+    "static/css/main.822946f7.css",
+    "static/js/main.60425064.js"
   ]
 }
