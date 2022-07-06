@@ -67,7 +67,12 @@ export const SearchPage = () => {
                 style={{ backgroundColor: tag.color }}
                 className="tag-preview"
               >
-                {tag && <h2>{tag?.title}</h2>}
+                {tag && (
+                  <div>
+                    <h2>{tag?.title}</h2>
+                    <img className="tag-img" src={tag.imgUrl} />
+                  </div>
+                )}
               </div>
             );
           })}
