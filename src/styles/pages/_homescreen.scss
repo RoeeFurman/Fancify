@@ -28,26 +28,23 @@
         flex-direction: column;
         min-height: 100vh;
         position: fixed;
-        padding: 24px;
+        padding-top: 24px;
 
-        a {
-            width: 60%;
-            display: flex;
-            justify-content: space-between;
-        }
 
         .logo {
-            width: 130px;
             display: flex;
             align-items: center;
             align-self: center;
-            justify-content: center;
             margin: 0px 0 18px;
+            padding: 0 24px;
+            cursor: default;
 
             h1 {
                 font-weight: 1000;
-                font-size: 24px;
+                font-size: 25px;
                 margin-left: 5px;
+                letter-spacing: -1px;
+
             }
 
             img {
@@ -56,12 +53,26 @@
             }
         }
 
-        >* {
-            padding: 0 20px;
-        }
 
         a {
             height: 40px;
+            line-height: 1rem;
+            vertical-align: middle;
+            display: flex;
+            align-items: center;
+            font-size: 0.875rem;
+            padding: 0 24px;
+
+            &:hover {
+                text-decoration: none;
+            }
+
+
+            .icon {
+                font-size: 24px;
+                margin-right: 16px;
+            }
         }
+
     }
 }

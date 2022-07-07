@@ -30,11 +30,11 @@ export const HomeScreen = () => {
             </div>
           </div>
           <Link to="/screen/">
-            <MdHomeFilled />
-            Library
+            <MdHomeFilled className="icon" />
+            Home
           </Link>
           <Link to="/screen/search">
-            <RiSearchLine />
+            <RiSearchLine className="icon" />
             Search
           </Link>
         </nav>

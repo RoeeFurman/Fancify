@@ -1,26 +1,55 @@
 .search-page {
     background-color: $search-bg;
-    padding: 10px;
+    padding: 32px;
     width: calc(100% - 240px);
     position: absolute;
     left: 240px;
+
+    .results {
+        display: flex;
+    }
+
+    .top-results {
+
+        .top-result {
+            color: $main-white;
+            background-color: $player-bg;
+
+            img {
+                height: 92px;
+                width: 92px;
+            }
+
+            h2 {
+                font-size: 36px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                width: 300px;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+        }
+
+    }
 
     .title {
         padding: 15px 25px;
         color: white;
         font-weight: 900;
         font-size: 24px;
+        font-family: book-bold;
     }
 
     .result {
         color: white;
         min-height: 56px;
-        max-width: 600px;
         overflow: visible;
         margin: 5px 5px 0 30px;
         display: flex;
         align-items: center;
-        padding: 10px;
 
         &:hover {
             background-color: $player-bg;

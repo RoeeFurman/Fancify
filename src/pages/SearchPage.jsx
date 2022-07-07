@@ -43,21 +43,36 @@ export const SearchPage = () => {
     <section className="search-page">
       <SearchBar getResults={getResults} />
       {searchSongs && (
-        <div>
-          <h1 className="title">Songs</h1>
-          <ul>
-            {searchSongs.map((song) => (
-              <li className="result" key={song.etag}>
-                <img src={song.snippet.thumbnails.default.url} />
-                <div className="result-titles">
-                  <h2 onClick={() => setVideoId(song)}>{song.snippet.title}</h2>
-                  <h3>{song.snippet.channelTitle}</h3>
-                </div>
-              </li>
-            ))}
-          </ul>
+        <div className="results">
+          <div className="top-results">
+            <h1 className="title">Top result</h1>
+            <div className="top-result">
+              <img src={searchSongs[0].snippet.thumbnails.default.url} />
+              <h2 onClick={() => setVideoId(searchSongs[0])}>
+                {searchSongs[0].snippet.title}
+              </h2>
+              <h3>{searchSongs[0].snippet.channelTitle}</h3>
+            </div>
+          </div>
+          <div>
+            <h1 className="title">Songs</h1>
+            <ul>
+              {searchSongs.map((song) => (
+                <li className="result" key={song.etag}>
+                  <img src={song.snippet.thumbnails.default.url} />
+                  <div className="result-titles">
+                    <h2 onClick={() => setVideoId(song)}>
+                      {song.snippet.title}
+                    </h2>
+                    <h3>{song.snippet.channelTitle}</h3>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       )}
+
       {tags && (
         <div className="tags-list">
           {tags.map((tag) => {
