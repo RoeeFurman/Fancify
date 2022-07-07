@@ -21,4 +21,15 @@
         margin: 12px;
     }
 
+
+    .playlist-by-genre {
+        font-size: 96px;
+        font-family: book-bold;
+        height: 250px;
+        display: flex;
+        align-items: flex-end;
+        background: linear-gradient(transparent 0, rgba(0, 0, 0, .5) 100%);
+        width: 100%;
+        padding: 20px;
+    }
 }

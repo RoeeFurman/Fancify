@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, Route } from "react-router-dom";
 import { Player } from "../components/Player";
 import { Library } from "../components/Library";
+import { GenreList } from "../components/GenreList";
 import { SearchPage } from "../pages/SearchPage";
 import { PlaylistDetails } from "../components/PlaylistDetails";
 import { MdHomeFilled } from "react-icons/md";
@@ -47,6 +48,9 @@ export const HomeScreen = () => {
           </Route>
           <Route path="/screen/library/:id">
             <PlaylistDetails />
+          </Route>
+          <Route path="/screen/genre/:tag">
+            <GenreList />
           </Route>
         </div>
       </div>

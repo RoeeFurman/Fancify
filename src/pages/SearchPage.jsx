@@ -4,6 +4,7 @@ import { youtubeService } from "../services/youtubeService";
 import { useDispatch } from "react-redux";
 import { setSong, setMiniPlaylist } from "../store/actions/audio-player.action";
 import { playlistService } from "../services/playlistService";
+import { Link } from "react-router-dom";
 
 export const SearchPage = () => {
   const [searchSongs, setSearchSongs] = useState(null);
@@ -16,8 +17,10 @@ export const SearchPage = () => {
 
   const getResults = async (song) => {
     var searchSongs = await youtubeService.query(song);
-    setSearchSongs(searchSongs.items);
-    console.log(searchSongs.items);
+    if (searchSongs.items.length > 4)
+      setSearchSongs(searchSongs.items.slice(0, 4));
+    else setSearchSongs(searchSongs.items);
+    console.log(searchSongs.items.slice(0, 2));
   };
 
   const loadTags = async () => {
@@ -54,7 +57,7 @@ export const SearchPage = () => {
               <h3>{searchSongs[0].snippet.channelTitle}</h3>
             </div>
           </div>
-          <div>
+          <div className="more-results">
             <h1 className="title">Songs</h1>
             <ul>
               {searchSongs.map((song) => (
@@ -77,18 +80,20 @@ export const SearchPage = () => {
         <div className="tags-list">
           {tags.map((tag) => {
             return (
-              <div
-                key={tag.title}
-                style={{ backgroundColor: tag.color }}
-                className="tag-preview"
-              >
-                {tag && (
-                  <div>
-                    <h2>{tag?.title}</h2>
-                    <img className="tag-img" src={tag.imgUrl} />
-                  </div>
-                )}
-              </div>
+              <Link to={`/screen/genre/${tag.title}`} key={tag.title}>
+                <div
+                  key={tag.title}
+                  style={{ backgroundColor: tag.color }}
+                  className="tag-preview"
+                >
+                  {tag && (
+                    <div>
+                      <h2>{tag?.title}</h2>
+                      <img className="tag-img" src={tag.imgUrl} />
+                    </div>
+                  )}
+                </div>
+              </Link>
             );
           })}
         </div>

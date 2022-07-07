@@ -7,85 +7,101 @@
 
     .results {
         display: flex;
-    }
+        justify-content: space-around;
 
-    .top-results {
+        .top-results {
+            flex-grow: 0.3;
+            font-family: book-bold;
 
-        .top-result {
-            color: $main-white;
-            background-color: $player-bg;
-
-            img {
-                height: 92px;
-                width: 92px;
-            }
-
-            h2 {
-                font-size: 36px;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                width: 300px;
-            }
-
-            h3 {
-                font-size: 18px;
-            }
-        }
-
-    }
-
-    .title {
-        padding: 15px 25px;
-        color: white;
-        font-weight: 900;
-        font-size: 24px;
-        font-family: book-bold;
-    }
-
-    .result {
-        color: white;
-        min-height: 56px;
-        overflow: visible;
-        margin: 5px 5px 0 30px;
-        display: flex;
-        align-items: center;
-
-        &:hover {
-            background-color: $player-bg;
-        }
-
-        img {
-            height: 40px;
-            width: 40px;
-        }
-
-        .result-titles {
-            margin-left: 10px;
-            cursor: pointer;
-
-
-            h2 {
-                max-width: 400px;
-                font-size: 16px;
-                font-weight: 600;
-                line-height: 24px;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-
+            .top-result {
+                color: $main-white;
+                background-color: $player-bg;
+                height: 224px;
+                padding: 20px;
+                border-radius: 5px;
 
                 &:hover {
-                    text-decoration: underline;
+                    background-color: $card-list-bg-hover;
+                }
+
+
+                img {
+                    height: 92px;
+                    width: 92px;
+                }
+
+                h2 {
+                    font-size: 36px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    width: 300px;
+                }
+
+                h3 {
+                    font-size: 18px;
                 }
             }
+        }
 
-            h3 {
-                font-size: 14px;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-                color: $player-scnd-txt;
+        .title {
+            padding: 15px 25px;
+            color: white;
+            font-weight: 900;
+            font-size: 24px;
+            font-family: book-bold;
+        }
+
+        .more-results {
+            flex-grow: 0.67;
+
+            .result {
+                color: white;
+                min-height: 56px;
+                overflow: visible;
+                margin: 0px 0px 0 30px;
+                display: flex;
+                align-items: center;
+                border-radius: 5px;
+
+                &:hover {
+                    background-color: $card-list-bg-hover;
+                }
+
+                img {
+                    height: 40px;
+                    width: 40px;
+                    margin-left: 10px;
+                }
+
+                .result-titles {
+                    margin-left: 10px;
+                    cursor: pointer;
+
+
+                    h2 {
+                        max-width: 400px;
+                        font-size: 16px;
+                        font-weight: 600;
+                        line-height: 24px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+
+                    }
+
+                    h3 {
+                        font-size: 14px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        color: $player-scnd-txt;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
             }
         }
     }
@@ -96,6 +112,12 @@
         gap: 40px;
         margin: 40px;
         margin-bottom: 200px;
+
+        a {
+            &:hover {
+                text-decoration: none;
+            }
+        }
 
         .tag-preview {
             width: 200px;
