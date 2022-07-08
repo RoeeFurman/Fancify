@@ -17,6 +17,8 @@
                 padding: 20px;
                 border-radius: 5px;
                 transition: 0.3s all;
+                font-family: book, sans-serif;
+
 
                 &:hover {
                     background-color: $card-list-bg-hover;
@@ -62,6 +64,7 @@
                 display: flex;
                 align-items: center;
                 border-radius: 5px;
+                font-family: book, sans-serif;
 
                 &:hover {
                     background-color: $card-list-bg-hover;
@@ -109,7 +112,7 @@
         display: flex;
         flex-wrap: wrap;
         gap: 40px;
-        margin: 40px;
+        margin: 40px 0;
         margin-bottom: 130px;
 
         a {
@@ -126,7 +129,6 @@
             justify-content: start;
             align-items: flex-start;
             color: $main-white;
-            // cursor: pointer;
             padding: 20px;
             transition: 0.2s;
             position: relative;

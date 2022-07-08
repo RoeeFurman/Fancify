@@ -4,14 +4,18 @@
     width: 100%;
     height: 100vh;
     grid-column: 1/-1;
-    overflow-y: scroll;
     color: $main-white;
+    margin-bottom: 100px;
 
     ul {
         margin-bottom: 150px;
         position: relative;
         background-color: transparent;
         padding: 0 16px;
+
+        li {
+            padding: 0 16px;
+        }
     }
 
     .playlist-header {
@@ -39,10 +43,11 @@
         img {
             width: 233px;
             height: 233px;
+            box-shadow: 0 4px 60px rgb(0 0 0 / 50%);
         }
 
         h1 {
-            font-family: gotham-bold;
+            font-family: gotham-bold, sans-serif;
             font-size: 96px;
             margin-left: 30px;
             margin-bottom: 10px;
@@ -60,7 +65,8 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        font-family: book;
+        font-family: book, sans-serif;
+        padding: 0 16px;
         cursor: pointer;
 
         &:hover {
@@ -92,11 +98,11 @@
     }
 
     .header {
-        margin: 10px 40px;
+        margin: 10px 60px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 10px 0;
+        padding: 10px 16px;
         border-bottom: 1px solid hsla(0, 0%, 100%, .1);
 
         .idx {

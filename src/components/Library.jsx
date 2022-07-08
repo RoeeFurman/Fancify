@@ -3,6 +3,7 @@ import { playlistService } from "../services/playlistService";
 import { useSelector, useDispatch } from "react-redux";
 import { setSong } from "../store/actions/audio-player.action";
 import { PlaylistsList } from "./Playlistslist";
+import { Link } from "react-router-dom";
 
 export const Library = () => {
   useEffect(() => {
@@ -18,7 +19,6 @@ export const Library = () => {
     tags.forEach(async (tag) => {
       tag.playlists = await playlistService.query(tag.title);
     });
-    console.log(tags);
     setTags(tags);
   };
 
@@ -36,7 +36,12 @@ export const Library = () => {
               return (
                 <li key={tag.title}>
                   {tag.playlists.length > 0 && (
-                    <h2 className="tag-title">{tag?.title}</h2>
+                    <div className="playlist-title">
+                      <div className="tag-title">{tag?.title}</div>
+                      <Link to={`/screen/genre/${tag.title}`} key={tag.title}>
+                        SEE MORE
+                      </Link>
+                    </div>
                   )}
                   <PlaylistsList playlists={tag.playlists} />
                 </li>

@@ -157,10 +157,9 @@
                 border-radius: 0px;
                 border: 0px solid #000000;
 
-                &:hover {
-                    background-color: $main-green;
-
-                }
+                // &:hover {
+                //     background-color: $main-green;
+                // }
             }
 
             input[type=range]::-webkit-slider-thumb {
@@ -188,8 +187,6 @@
                 background: #5e5e5e;
                 border-radius: 0px;
                 border: 0px solid #000000;
-
-
             }
 
             input[type=range]::-moz-range-thumb {
@@ -210,8 +207,6 @@
                 background: transparent;
                 border-color: transparent;
                 color: transparent;
-
-
             }
 
             input[type=range]::-ms-fill-lower {
@@ -245,6 +240,7 @@
             input[type=range]:focus::-ms-fill-upper {
                 background: #5e5e5e;
             }
+
         }
     }
 

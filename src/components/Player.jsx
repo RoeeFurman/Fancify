@@ -28,12 +28,10 @@ class _Player extends React.Component {
   };
 
   handleDuration = (duration) => {
-    // console.log("onDuration", duration);
     this.setState({ duration });
   };
 
   handleProgress = (state) => {
-    // console.log("onProgress", state);
     if (state.played > 0.995) this.onForward();
     this.setState({ played: state.played });
 
@@ -201,6 +199,7 @@ class _Player extends React.Component {
                 </h4>
                 <input
                   type="range"
+                  className="styled-slider slider-progress"
                   min={0}
                   max={1}
                   step="any"

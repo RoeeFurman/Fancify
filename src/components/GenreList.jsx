@@ -12,8 +12,6 @@ export const GenreList = () => {
     loadPlaylists();
   }, []);
 
-  // const dispatch = useDispatch();
-
   const [playlists, setplaylists] = useState([]);
 
   const loadPlaylists = async () => {
@@ -21,11 +19,6 @@ export const GenreList = () => {
     console.log(playlists);
     setplaylists(playlists);
   };
-
-  // const setVideoId = (song) => {
-  //   console.log(song);
-  //   dispatch(setSong(song));
-  // };
 
   return (
     <div className="library">
