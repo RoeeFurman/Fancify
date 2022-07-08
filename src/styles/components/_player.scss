@@ -1,16 +1,21 @@
 .player {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
-    border-top: 1px solid black;
+    padding: 16px;
+    border-top: 1px solid #282828;
     width: 100%;
+    // min-width: 620px;
     position: fixed;
     bottom: 0;
     background-color: $player-bg;
     color: $main-white;
+    height: auto;
 
     button {
-        margin: 10px 10px;
+        color: $main-white;
+        background: none;
+        border: none;
+        font-size: 20px;
     }
 
     iframe {
@@ -19,11 +24,19 @@
     }
 
 
+    .right-player {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        width: 30%;
+        min-width: 180px;
+    }
+
     .display-details {
         display: flex;
         align-items: center;
-        flex-grow: 0;
-        min-width: 300px;
+        width: 30%;
+        min-width: 180px;
 
         img {
             height: 56px;
@@ -40,6 +53,8 @@
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
+                margin: 0 14px;
+                justify-self: flex-start;
             }
 
             h3 {
@@ -49,6 +64,9 @@
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
+                font-size: 0.6875rem;
+                line-height: 1rem;
+                margin: 0 14px;
             }
         }
 
@@ -58,14 +76,43 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        flex-grow: 1;
+        width: 40%;
+        min-width: 722px;
 
         .actions {
-            button {
-                background: none;
-                border: none;
-                font-size: 20px;
+            margin-bottom: 8px;
+            gap: 16px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+
+
+            .main-btn {
+                display: block;
+                width: 32px;
             }
+
+            .left-btns {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 8px;
+            }
+
+
+            .right-btns {
+                flex: 1;
+                gap: 8px;
+                width: 30%;
+                min-width: 180px;
+                display: flex;
+                justify-content: baseline;
+                align-items: center;
+            }
+
+
+
 
             .play {
                 background-color: $main-white;
@@ -81,11 +128,12 @@
         .duration {
             display: flex;
             align-items: center;
-            width: 60%;
+            width: 100%;
 
             h4 {
                 min-width: 70px;
                 text-align: center;
+                font-size: 0.6875rem;
             }
 
             input[type=range] {
@@ -200,7 +248,5 @@
         }
     }
 
-    .right-player {
-        flex-grow: 0;
-    }
+
 }
