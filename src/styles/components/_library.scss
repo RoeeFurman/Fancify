@@ -1,16 +1,9 @@
 .library {
-    // background: rgb(255, 204, 0);
-    // background: linear-gradient(180deg, rgba(255, 204, 0, 1) 0%, rgba(137, 112, 13, 1) 23%, rgba(86, 72, 18, 1) 45%, rgba(24, 24, 24, 1) 61%);
     background-color: $search-bg;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
     color: $main-white;
     overflow-y: auto;
-    padding: 20px;
-    width: calc(100% - 240px);
-    position: absolute;
-    left: 240px;
+    grid-column: 2/4;
+    margin-bottom: 120px;
 
     h1 {
         font-weight: 800;
@@ -31,5 +24,11 @@
         background: linear-gradient(transparent 0, rgba(0, 0, 0, .5) 100%);
         width: 100%;
         padding: 20px;
+    }
+
+    .tag-title {
+        font-family: book-bold;
+        font-size: 2rem;
+
     }
 }

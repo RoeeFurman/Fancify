@@ -11,14 +11,7 @@ export const Library = () => {
   }, []);
 
   const dispatch = useDispatch();
-  // const [playlists, setPlaylists] = useState([]);
   const [tags, setTags] = useState([]);
-
-  // const loadPlaylists = async () => {
-  //   const playlist = await playlistService.query();
-  //   setPlaylists(playlist);
-  //   console.log(playlist);
-  // };
 
   const loadTags = async () => {
     const tags = await playlistService.getTags();
@@ -36,14 +29,15 @@ export const Library = () => {
 
   return (
     <div className="library">
-      <h1>Library</h1>
       {tags && (
         <div>
           <ul>
             {tags.map((tag) => {
               return (
                 <li key={tag.title}>
-                  {tag.playlists.length > 0 && <h2>{tag?.title}</h2>}
+                  {tag.playlists.length > 0 && (
+                    <h2 className="tag-title">{tag?.title}</h2>
+                  )}
                   <PlaylistsList playlists={tag.playlists} />
                 </li>
               );

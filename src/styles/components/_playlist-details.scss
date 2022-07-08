@@ -1,20 +1,16 @@
 .playlist-details {
     width: calc(100% - 240px);
-    position: absolute;
-    left: 240px;
-
     background-color: $search-bg;
-    min-height: 100vh;
+    // min-height: 100vh;
+    width: 100%;
 
     color: $main-white;
 
     ul {
-        margin-bottom: 120px;
-        position: absolute;
+        margin-bottom: 150px;
+        position: relative;
         background-color: transparent;
         padding: 0 16px;
-        width: 100%;
-
     }
 
     .playlist-header {
@@ -63,7 +59,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        // padding: 3px 30px;
+        font-family: book;
         cursor: pointer;
 
         &:hover {

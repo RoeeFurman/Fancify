@@ -1,6 +1,11 @@
 @mixin flex($direction: row, $justify: center, $align: center) {
-    display: flex;
-    flex-direction: $direction;
-    justify-content: $justify;
-    align-items: $align;
-  }
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin layout($padding: 30px, $content: 1fr) {
+  display: grid;
+  grid-template-columns: $padding $content $padding;
+}
