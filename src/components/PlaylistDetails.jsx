@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { playlistService } from "../services/playlistService";
-import { useDispatch } from "react-redux";
-import { setSong } from "../store/actions/audio-player.action";
+import { useDispatch, connect } from "react-redux";
+import { setSong, setMiniPlaylist } from "../store/actions/audio-player.action";
 import getAverageColor from "get-average-color";
-// import { SearchPage } from "../pages/SearchPage";
 import { BsClock } from "react-icons/bs";
+import { SearchSection } from "./SearchSection";
 
-export const PlaylistDetails = ({ match }) => {
+export const _PlaylistDetails = ({ props }) => {
   //   const history = useHistory();
   const [currPlaylist, setCurrPlaylist] = useState(null);
   const [currImgAvgColor, setCurrImgAvgColor] = useState();
   const { id } = useParams();
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log(id);
     getPlaylistDetails();
-  }, []);
+  }, props?.miniPlaylist?.songs);
 
   useEffect(() => {
     getAvgColor(currPlaylist?.imgUrl);
@@ -26,10 +26,7 @@ export const PlaylistDetails = ({ match }) => {
     const rgb = await getAverageColor(url);
     console.log(rgb);
     setCurrImgAvgColor(rgb);
-    // updateColor(`rgb(${rgb.r},${rgb.g}, ${rgb.b})`);
   };
-
-  const dispatch = useDispatch();
 
   const getPlaylistDetails = async () => {
     const playlist = await playlistService.getById(id);
@@ -39,6 +36,57 @@ export const PlaylistDetails = ({ match }) => {
   const setVideoId = (song) => {
     console.log(song);
     dispatch(setSong(song));
+  };
+
+  const onRemoveSong = async (ev, id) => {
+    ev.stopPropagation();
+    const updatedPlaylist = await playlistService.removeSong(id, currPlaylist);
+    setCurrPlaylist(updatedPlaylist);
+    dispatch(
+      setMiniPlaylist(
+        updatedPlaylist._id,
+        0,
+        updatedPlaylist.songs,
+        updatedPlaylist.name
+      )
+    );
+  };
+
+  const onLikeSong = async (ev, id) => {
+    ev.stopPropagation();
+    const updatedPlaylist = await playlistService.toggleLike(id, currPlaylist);
+    setCurrPlaylist(updatedPlaylist);
+    dispatch(
+      setMiniPlaylist(
+        updatedPlaylist._id,
+        0,
+        updatedPlaylist.songs,
+        updatedPlaylist.name
+      )
+    );
+  };
+
+  const onAddSong = async (song) => {
+    console.log(song);
+    const songToAdd = {
+      id: song.id.videoId,
+      imgUrl: song.snippet.thumbnails.default.url,
+      title: song.snippet.title,
+      channelTitle: song.snippet.channelTitle,
+      initIdx: currPlaylist.songs.length,
+    };
+    const updatedPlaylist = await playlistService.addSong(
+      songToAdd,
+      currPlaylist
+    );
+    dispatch(
+      setMiniPlaylist(
+        updatedPlaylist,
+        0,
+        updatedPlaylist.songs,
+        updatedPlaylist.name
+      )
+    );
   };
 
   return (
@@ -59,6 +107,7 @@ export const PlaylistDetails = ({ match }) => {
           </div>
         </>
       )}
+
       {currPlaylist && (
         <ul>
           <div className="header">
@@ -76,13 +125,50 @@ export const PlaylistDetails = ({ match }) => {
                   <img src={song.imgUrl} />
                   <h4>{song.title}</h4>
                 </div>
-                <h4>{song.duration.display}</h4>
+                <h4>{song?.duration?.display}</h4>
+                <div className="song-menu">
+                  <button onClick={(ev) => onRemoveSong(ev, song.id)}>
+                    Remove
+                  </button>
+                  <button onClick={(ev) => onLikeSong(ev, song.id)}>
+                    {song?.isLiked ? "unLike" : "Like"}
+                  </button>
+                </div>
               </div>
             </li>
           ))}
+          <div className="search-in-plst">
+            <h2 className="search-in-plst-title">
+              Let's find something for your playlist
+            </h2>
+            <SearchSection onAddSong={onAddSong} />
+          </div>
         </ul>
       )}
-      {/* <SearchPage /> */}
     </section>
   );
 };
+
+function mapStateToProps(state) {
+  return {
+    song: state.audioPlayerModule.song,
+    miniPlaylist: state.audioPlayerModule.miniPlaylist,
+    // currTimePass: state.audioPlayerModule.currTimePass,
+    // isShuffled: state.audioPlayerModule.isShuffled,
+    // user: state.userModule.user
+  };
+}
+const mapDispatchToProps = {
+  // setPlayer,
+  // togglePlay,
+  // changeSong,
+  setSong,
+  // setCurrTimePass,
+  // toggleShuffle,
+  // toggleLike,
+};
+
+export const PlaylistDetails = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(_PlaylistDetails);

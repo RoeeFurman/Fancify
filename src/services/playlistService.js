@@ -6,8 +6,9 @@ export const playlistService = {
     getById,
     // save,
     // makeDummy,
-    // addSong,
-    // removeSong,
+    addSong,
+    toggleLike,
+    removeSong,
     getTags,
     // removePlaylist,
     // onWatchPlaylist,
@@ -29,26 +30,36 @@ async function getById(playlistId, filterBy) {
     // return httpService.get(`playlist/${playlistId}`)
 }
 
-
 // async function save(playlist, user) {
 //     if (playlist._id) return await httpService.put(`playlist/${playlist._id}`, playlist)
 //     playlist = { ...playlist, tags: ['New Releases'], createdBy: { _id: user._id || '', fullname: user.fullname }, songs: playlist.songs || [] } //when swapping to frontend only, add "createdAt: Date.now()"
 //     return await httpService.post(`playlist/`, playlist)
 // }
 
-// async function addSong(song, playlist, user) {
-//     if (!playlist.songs.some((currsong) => currsong.id === song.id)) {
-//         playlist.songs.push({ ...song, addedAt: Date.now(), addedBy: { fullname: user.fullname, _id: user._id || '' } })
-//         return await httpService.put(`playlist/${playlist._id}`, playlist)
-//     }
-//     return playlist
-// }
+async function addSong(song, playlist) {
+    if (!playlist.songs.some((currsong) => currsong.id === song.id)) {
+        playlist.songs.push({ ...song, addedAt: Date.now() })
+        // return await httpService.put(`playlist/${playlist._id}`, playlist)
+    }
+    console.log(playlist)
+    return Promise.resolve(playlist)
+}
 
-// async function removeSong(song, playlist) {
-//     const idx = playlist.songs.findIndex(currsong => currsong.id === song.id)
-//     playlist.songs.splice(idx, 1)
-//     return await httpService.put(`playlist/${playlist._id}`, playlist)
-// }
+async function removeSong(id, playlist) {
+    const idx = playlist.songs.findIndex(currsong => currsong.id === id)
+    playlist.songs.splice(idx, 1)
+    return Promise.resolve(playlist)
+    // return await httpService.put(`playlist/${playlist._id}`, playlist)
+}
+
+async function toggleLike(id, playlist) {
+    const idx = playlist.songs.findIndex(currsong => currsong.id === id)
+    const currSong = playlist.songs[idx]
+    currSong.isLiked = currSong.isLiked ? !currSong.isLiked : true;
+    console.log(playlist)
+    return Promise.resolve(playlist)
+    // return await httpService.put(`playlist/${playlist._id}`, playlist)
+}
 
 // async function removePlaylist(playlistId) {
 //     return httpService.delete(`playlist/${playlistId}`)

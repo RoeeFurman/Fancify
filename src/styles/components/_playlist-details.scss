@@ -8,13 +8,27 @@
     margin-bottom: 100px;
 
     ul {
-        margin-bottom: 150px;
+        margin-bottom: 130px;
         position: relative;
         background-color: transparent;
         padding: 0 16px;
 
         li {
             padding: 0 16px;
+        }
+
+        .search-in-plst {
+            min-height: 280px;
+            margin-top: 20px;
+
+            .search-in-plst-title {
+                padding: 50px 0 0 20px;
+                font-family: book-bold;
+                font-size: 1.5rem;
+                line-height: 1.75rem;
+                text-transform: none;
+                letter-spacing: -0.04em;
+            }
         }
     }
 
@@ -29,7 +43,6 @@
 
         &:after {
             content: '';
-            // background-color: inherit;
             height: 300px;
             background: linear-gradient(180deg, rgba(18, 18, 18, 0.6810925053615196) 3%, rgba(18, 18, 18, 1) 80%);
             background-color: inherit;
@@ -74,8 +87,8 @@
         }
 
         .idx {
-            width: 10px;
-            flex-basis: 10px;
+            flex-basis: 40px;
+
         }
 
         .song-details {
