@@ -68,6 +68,23 @@
                 button {
                     position: absolute;
                     right: 5px;
+                    background: none;
+                    color: $main-white;
+                    border: 1px solid $add-btn-border;
+                    border-radius: 10px;
+                    padding: 7px 15px;
+                    font-family: book-bold;
+                    font-size: 0.875rem;
+                    line-height: 1rem;
+                    text-transform: none;
+                    letter-spacing: normal;
+                    transition: 0.2s;
+
+
+                    &:hover {
+                        border: 1px solid $main-white;
+                        transform: scale(1.04);
+                    }
                 }
 
                 &:hover {

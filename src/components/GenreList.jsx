@@ -21,10 +21,10 @@ export const GenreList = () => {
   };
 
   return (
-    <div className="library">
+    <div className="genre-list">
       <div className="playlist-by-genre">{params.tag}</div>
       {playlists && (
-        <div>
+        <div className="grid">
           <PlaylistsList playlists={playlists} />
         </div>
       )}

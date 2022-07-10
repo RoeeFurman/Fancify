@@ -84,11 +84,34 @@
 
         &:hover {
             background-color: hsla(0, 0%, 100%, .1);
+
+            .like-btn {
+                opacity: 1;
+            }
         }
 
         .idx {
             flex-basis: 40px;
 
+        }
+
+        button {
+            margin-left: 20px;
+            background: none;
+            border: none;
+            color: $player-scnd-txt;
+
+            &:hover {
+                color: $main-white;
+            }
+        }
+
+        .like-btn {
+            margin-right: 16px;
+        }
+
+        .liked {
+            opacity: 0;
         }
 
         .song-details {

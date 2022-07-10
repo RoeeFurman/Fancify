@@ -5,7 +5,7 @@ export const SearchBar = ({ getResults }) => {
   const searchInput = useRef();
 
   useEffect(() => {
-    searchInput.current.focus();
+    // searchInput.current.focus();
   }, []);
 
   const searchByKeyboard = (key) => {
