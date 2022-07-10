@@ -1,7 +1,9 @@
 .library {
     background-color: $search-bg;
     color: $main-white;
-    grid-column: 2/-1;
+    grid-column: 2;
+    font-family: book-bold;
+    margin-bottom: 130px;
 
     h1 {
         font-weight: 800;

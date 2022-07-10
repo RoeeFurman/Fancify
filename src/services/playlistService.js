@@ -24,7 +24,7 @@ function query(filterBy = null) {
 }
 
 async function getById(playlistId, filterBy) {
-    console.log(playlistId)
+    // console.log(playlistId)
     return Promise.resolve(PLAYLIST_DATA.filter(playlist => playlist._id === playlistId))
     // return await storageService.get(STORAGE_KEY, playlistId, filterBy)
     // return httpService.get(`playlist/${playlistId}`)
@@ -41,7 +41,7 @@ async function addSong(song, playlist) {
         playlist.songs.push({ ...song, addedAt: Date.now() })
         // return await httpService.put(`playlist/${playlist._id}`, playlist)
     }
-    console.log(playlist)
+    // console.log(playlist)
     return Promise.resolve(playlist)
 }
 
@@ -56,7 +56,7 @@ async function toggleLike(id, playlist) {
     const idx = playlist.songs.findIndex(currsong => currsong.id === id)
     const currSong = playlist.songs[idx]
     currSong.isLiked = currSong.isLiked ? !currSong.isLiked : true;
-    console.log(playlist)
+    // console.log(playlist)
     return Promise.resolve(playlist)
     // return await httpService.put(`playlist/${playlist._id}`, playlist)
 }

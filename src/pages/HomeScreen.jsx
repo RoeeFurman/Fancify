@@ -7,15 +7,15 @@ import { SearchPage } from "../pages/SearchPage";
 import { PlaylistDetails } from "../components/PlaylistDetails";
 import { MdHomeFilled } from "react-icons/md";
 import { RiSearchLine } from "react-icons/ri";
-import { BsFillPlusSquareFill } from "react-icons/bs";
+// import { BsFillPlusSquareFill } from "react-icons/bs";
 
 export const HomeScreen = () => {
   const [currSong, setCurrSongId] = useState(null);
 
-  const setVideoId = (id) => {
-    console.log(id, "currsongid");
-    setCurrSongId(id);
-  };
+  // const setVideoId = (id) => {
+  //   // console.log(id, "currsongid");
+  //   setCurrSongId(id);
+  // };
 
   return (
     <section className="home-screen">

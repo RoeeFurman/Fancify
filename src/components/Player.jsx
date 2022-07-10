@@ -77,7 +77,6 @@ class _Player extends React.Component {
   };
 
   setMute = () => {
-    // console.log("Mute");
     if (!this.state.isMuted) this.setState({ volume: 0 });
     else this.setState({ volume: 0.9 });
     this.setState({ isMuted: !this.state.isMuted });
@@ -168,7 +167,6 @@ class _Player extends React.Component {
                   loop={isLooping}
                   onDuration={this.handleDuration}
                   onProgress={this.handleProgress}
-                  // onSeek={(e) => console.log("onSeek", e)}
                   height="1px"
                   width="1px"
                 />

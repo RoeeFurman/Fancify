@@ -24,7 +24,7 @@ export const _PlaylistDetails = ({ props }) => {
 
   const getAvgColor = async (url) => {
     const rgb = await getAverageColor(url);
-    console.log(rgb);
+    // console.log(rgb);
     setCurrImgAvgColor(rgb);
   };
 
@@ -34,7 +34,7 @@ export const _PlaylistDetails = ({ props }) => {
   };
 
   const setVideoId = (song) => {
-    console.log(song);
+    // console.log(song);
     dispatch(setSong(song));
   };
 
@@ -71,7 +71,7 @@ export const _PlaylistDetails = ({ props }) => {
   };
 
   const onAddSong = async (song) => {
-    console.log(song);
+    // console.log(song);
     const songToAdd = {
       id: song.id.videoId,
       imgUrl: song.snippet.thumbnails.default.url,

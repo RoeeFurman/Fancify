@@ -4,22 +4,53 @@
     grid-template-columns: repeat(auto-fill, 220px);
 
     .playlist-card {
-        >* {
-            margin-bottom: 8px;
-        }
-
         display: flex;
         flex-direction: column;
         width: 188px;
         background-color: $card-list-bg;
-        justify-content: center;
+        justify-content: flex-start;
         padding: 16px;
         height: 266px;
         border-radius: 5px;
         cursor: pointer;
+        transition: 0.3s all;
+
+        .card-img {
+            position: relative;
+        }
 
         &:hover {
             background-color: $card-list-bg-hover;
+
+            .play-div {
+                opacity: 1;
+                bottom: 12px;
+            }
+        }
+
+        .play-div {
+            block-size: 48px;
+            inline-size: 48px;
+            position: absolute;
+            bottom: 0px;
+            right: 8px;
+            border-radius: 500px;
+            width: 48px;
+            height: 48px;
+            background-color: $main-green;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            opacity: 0;
+            box-shadow: 0 8px 8px rgb(0 0 0 / 30%);
+            transition: .3s all;
+
+            .play-svg {
+                width: 20px;
+                height: 20px;
+
+            }
+
         }
 
         h3 {
@@ -27,15 +58,20 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            font-family: book-bold;
+            line-height: 2rem;
+            margin-top: 10px;
         }
 
         h4 {
+            line-height: 1.5rem;
             color: $player-scnd-txt;
             font-size: 14px;
             max-width: 140px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            font-family: book;
         }
 
         img {

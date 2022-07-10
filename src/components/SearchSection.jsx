@@ -11,10 +11,6 @@ export const SearchSection = ({ onAddSong }) => {
   const dispatch = useDispatch();
   const param = useParams();
 
-  useEffect(() => {
-    console.log(param);
-  }, param);
-
   const getResults = async (song) => {
     var searchSongs = await youtubeService.query(song);
     if (searchSongs.items.length > 4)
@@ -23,6 +19,7 @@ export const SearchSection = ({ onAddSong }) => {
   };
 
   const setVideoId = (song) => {
+    console.log(song);
     if (param.id) return;
     const currSongMap = {
       id: song.id.videoId,
@@ -44,11 +41,11 @@ export const SearchSection = ({ onAddSong }) => {
               <div className="top-results">
                 <h1 className="title">Top result</h1>
                 <div className="top-result">
-                  <img src={searchSongs[0].snippet.thumbnails.default.url} />(
+                  <img src={searchSongs[0].snippet.thumbnails.default.url} />
                   <h2 onClick={() => setVideoId(searchSongs[0])}>
                     {searchSongs[0].snippet.title}
                   </h2>
-                  )<h3>{searchSongs[0].snippet.channelTitle}</h3>
+                  <h3>{searchSongs[0].snippet.channelTitle}</h3>
                 </div>
               </div>
             )}

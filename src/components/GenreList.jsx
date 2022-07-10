@@ -16,7 +16,6 @@ export const GenreList = () => {
 
   const loadPlaylists = async () => {
     const playlists = await playlistService.query(params.tag);
-    console.log(playlists);
     setplaylists(playlists);
   };
 
