@@ -67,7 +67,10 @@
         }
 
         h2 {
-            font-size: 30px;
+            color: #b3b3b3;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
             margin-left: 30px;
         }
 
@@ -125,11 +128,15 @@
             margin-left: 10px;
         }
 
-        img {
+        .song-img-preview {
             margin-right: 10px;
             height: 40px;
             width: 40px;
             object-fit: cover;
+        }
+
+        .playing-gif {
+            width: 16px;
         }
     }
 

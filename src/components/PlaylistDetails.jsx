@@ -1,30 +1,33 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { playlistService } from "../services/playlistService";
-import { useDispatch, connect } from "react-redux";
+import { useDispatch, connect, useSelector } from "react-redux";
 import { setSong, setMiniPlaylist } from "../store/actions/audio-player.action";
 import getAverageColor from "get-average-color";
 import { BsClock } from "react-icons/bs";
 import { SearchSection } from "./SearchSection";
 
-export const _PlaylistDetails = ({ props }) => {
+export const PlaylistDetails = () => {
   const [currPlaylist, setCurrPlaylist] = useState(null);
   const [currImgAvgColor, setCurrImgAvgColor] = useState();
   const [isMenuOpen, setisMenuOpen] = useState(true);
   const { id } = useParams();
   const dispatch = useDispatch();
+  const { song, isPlaying } = useSelector(
+    (storeState) => storeState.audioPlayerModule
+  );
 
   useEffect(() => {
     getPlaylistDetails();
-  }, props?.miniPlaylist?.songs);
+  }, []);
 
   useEffect(() => {
     getAvgColor(currPlaylist?.imgUrl);
-  }, currPlaylist?.imgUrl);
+  }, [currPlaylist?.imgUrl]);
 
   const getAvgColor = async (url) => {
     const rgb = await getAverageColor(url);
-    // console.log(rgb);
+    console.log(rgb);
     setCurrImgAvgColor(rgb);
   };
 
@@ -34,7 +37,6 @@ export const _PlaylistDetails = ({ props }) => {
   };
 
   const setVideoId = (song) => {
-    // console.log(song);
     dispatch(setSong(song));
   };
 
@@ -71,7 +73,6 @@ export const _PlaylistDetails = ({ props }) => {
   };
 
   const onAddSong = async (song) => {
-    // console.log(song);
     const songToAdd = {
       id: song.id.videoId,
       imgUrl: song.snippet.thumbnails.default.url,
@@ -121,19 +122,35 @@ export const _PlaylistDetails = ({ props }) => {
               <BsClock />
             </div>
           </div>
-          {currPlaylist?.songs?.map((song) => (
-            <li key={song.id}>
-              <div className="song-preview" onClick={() => setVideoId(song)}>
-                <div className="idx">{song.initIdx + 1}</div>
+          {currPlaylist?.songs?.map((currSong) => (
+            <li key={currSong.id}>
+              <div
+                className="song-preview"
+                onClick={() => setVideoId(currSong)}
+              >
+                {song?.id === currSong?.id ? (
+                  <div className="idx">
+                    <img
+                      class="n5XwsUqagSoVk8oMiw1x"
+                      width="12"
+                      height="12"
+                      alt=""
+                      className="playing-gif"
+                      src="https://open.spotifycdn.com/cdn/images/equaliser-animated-green.f93a2ef4.gif"
+                    />
+                  </div>
+                ) : (
+                  <div className="idx">{currSong.initIdx + 1}</div>
+                )}
                 <div className="song-details">
-                  <img src={song.imgUrl} />
-                  <h4>{song.title}</h4>
+                  <img src={currSong.imgUrl} className="song-img-preview" />
+                  <h4>{currSong.title}</h4>
                 </div>
-                <div onClick={(ev) => onLikeSong(ev, song.id)}>
-                  {song?.isLiked ? (
+                <div onClick={(ev) => onLikeSong(ev, currSong.id)}>
+                  {currSong?.isLiked ? (
                     <svg
                       role="img"
-                      onClick={(ev) => this.onLikeSong(ev, song.id)}
+                      onClick={(ev) => this.onLikeSong(ev, currSong.id)}
                       height="16"
                       width="16"
                       viewBox="0 0 16 16"
@@ -145,7 +162,7 @@ export const _PlaylistDetails = ({ props }) => {
                   ) : (
                     <svg
                       role="img"
-                      onClick={(ev) => this.onLikeSong(ev, song.id)}
+                      onClick={(ev) => this.onLikeSong(ev, currSong.id)}
                       height="16"
                       width="16"
                       viewBox="0 0 16 16"
@@ -156,9 +173,9 @@ export const _PlaylistDetails = ({ props }) => {
                     </svg>
                   )}
                 </div>
-                <h4>{song?.duration?.display}</h4>
+                <h4>{currSong?.duration?.display}</h4>
                 {isMenuOpen && (
-                  <button onClick={(ev) => onRemoveSong(ev, song.id)}>
+                  <button onClick={(ev) => onRemoveSong(ev, currSong.id)}>
                     Remove
                   </button>
                 )}
@@ -177,26 +194,26 @@ export const _PlaylistDetails = ({ props }) => {
   );
 };
 
-function mapStateToProps(state) {
-  return {
-    song: state.audioPlayerModule.song,
-    miniPlaylist: state.audioPlayerModule.miniPlaylist,
-    // currTimePass: state.audioPlayerModule.currTimePass,
-    // isShuffled: state.audioPlayerModule.isShuffled,
-    // user: state.userModule.user
-  };
-}
-const mapDispatchToProps = {
-  // setPlayer,
-  // togglePlay,
-  // changeSong,
-  setSong,
-  // setCurrTimePass,
-  // toggleShuffle,
-  // toggleLike,
-};
+// function mapStateToProps(state) {
+//   return {
+//     song: state.audioPlayerModule.song,
+//     miniPlaylist: state.audioPlayerModule.miniPlaylist,
+//     // currTimePass: state.audioPlayerModule.currTimePass,
+//     // isShuffled: state.audioPlayerModule.isShuffled,
+//     // user: state.userModule.user
+//   };
+// }
+// const mapDispatchToProps = {
+//   // setPlayer,
+//   // togglePlay,
+//   // changeSong,
+//   setSong,
+//   // setCurrTimePass,
+//   // toggleShuffle,
+//   // toggleLike,
+// };
 
-export const PlaylistDetails = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(_PlaylistDetails);
+// export const PlaylistDetails = connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// )(_PlaylistDetails);

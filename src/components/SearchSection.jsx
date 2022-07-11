@@ -1,21 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useRef } from "react";
 import { SearchBar } from "../components/SearchBar";
 import { youtubeService } from "../services/youtubeService";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { setSong, setMiniPlaylist } from "../store/actions/audio-player.action";
-import { playlistService } from "../services/playlistService";
 
 export const SearchSection = ({ onAddSong }) => {
   const [searchSongs, setSearchSongs] = useState(null);
   const dispatch = useDispatch();
   const param = useParams();
+  let timeOutId = useRef(null);
 
   const getResults = async (song) => {
-    var searchSongs = await youtubeService.query(song);
-    if (searchSongs.items.length > 4)
-      setSearchSongs(searchSongs.items.slice(0, 4));
-    else setSearchSongs(searchSongs.items);
+    if (!song) return;
+    if (timeOutId.current) clearTimeout(timeOutId.current);
+    timeOutId.current = setTimeout(async () => {
+      var searchSongs = await youtubeService.query(song);
+      if (searchSongs.items.length > 4)
+        setSearchSongs(searchSongs.items.slice(0, 4));
+      else setSearchSongs(searchSongs.items);
+      timeOutId.current = null;
+    }, 400);
   };
 
   const setVideoId = (song) => {
