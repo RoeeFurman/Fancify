@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { playlistService } from "../services/playlistService";
-import { useDispatch, connect, useSelector } from "react-redux";
-import { setSong, setMiniPlaylist } from "../store/actions/audio-player.action";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setSong,
+  setMiniPlaylist,
+  togglePlay,
+} from "../store/actions/audio-player.action";
 import getAverageColor from "get-average-color";
 import { BsClock } from "react-icons/bs";
 import { SearchSection } from "./SearchSection";
@@ -32,11 +36,17 @@ export const PlaylistDetails = () => {
   };
 
   const getPlaylistDetails = async () => {
+    console.log(id);
     const playlist = await playlistService.getById(id);
+    console.log(...playlist);
+    dispatch(
+      setMiniPlaylist(playlist[0]._id, 0, playlist[0].songs, playlist[0].name)
+    );
     setCurrPlaylist(...playlist);
   };
 
-  const setVideoId = (song) => {
+  const setVideoId = async (song) => {
+    console.log(isPlaying);
     dispatch(setSong(song));
   };
 
@@ -128,14 +138,13 @@ export const PlaylistDetails = () => {
                 className="song-preview"
                 onClick={() => setVideoId(currSong)}
               >
-                {song?.id === currSong?.id ? (
+                {song?.id === currSong?.id && isPlaying ? (
                   <div className="idx">
                     <img
-                      class="n5XwsUqagSoVk8oMiw1x"
                       width="12"
                       height="12"
                       alt=""
-                      className="playing-gif"
+                      className=" playing-gif"
                       src="https://open.spotifycdn.com/cdn/images/equaliser-animated-green.f93a2ef4.gif"
                     />
                   </div>
@@ -150,7 +159,7 @@ export const PlaylistDetails = () => {
                   {currSong?.isLiked ? (
                     <svg
                       role="img"
-                      onClick={(ev) => this.onLikeSong(ev, currSong.id)}
+                      onClick={(ev) => onLikeSong(ev, currSong.id)}
                       height="16"
                       width="16"
                       viewBox="0 0 16 16"
@@ -162,7 +171,7 @@ export const PlaylistDetails = () => {
                   ) : (
                     <svg
                       role="img"
-                      onClick={(ev) => this.onLikeSong(ev, currSong.id)}
+                      onClick={(ev) => onLikeSong(ev, currSong.id)}
                       height="16"
                       width="16"
                       viewBox="0 0 16 16"

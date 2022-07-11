@@ -23,7 +23,7 @@ export const SearchBar = ({ getResults }) => {
           placeholder="Artists, songs, or podcasts..."
         />
         <button className="search-btn" onClick={() => getResults(song)}>
-          <i class="fa-solid fa-magnifying-glass"></i>
+          <i className="fa-solid fa-magnifying-glass"></i>
         </button>
       </span>
     </div>

@@ -22,11 +22,6 @@ export const Library = () => {
     setTags(tags);
   };
 
-  const setVideoId = (song) => {
-    console.log(song);
-    dispatch(setSong(song));
-  };
-
   return (
     <div className="library">
       {tags && (

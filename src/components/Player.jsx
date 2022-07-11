@@ -16,7 +16,6 @@ import {
 
 class _Player extends React.Component {
   state = {
-    isPlaying: true,
     isMuted: false,
     isLooping: false,
     duration: null,
@@ -43,7 +42,12 @@ class _Player extends React.Component {
   };
 
   handleVolumeChange = (e) => {
-    this.setState({ volume: e.target.value });
+    console.log(e.target.value);
+    if (!e.target.value) this.setMute();
+    else {
+      if (this.isMuted) this.setMute();
+      this.setState({ volume: e.target.value });
+    }
   };
 
   handleSeekChange = (e) => {
@@ -52,9 +56,10 @@ class _Player extends React.Component {
   };
 
   setStop = () => {
-    this.setState({ isPlaying: false });
+    // this.setState({ isPlaying: false });
     this.setState({ played: 0 });
     this.player.current.seekTo(0);
+    this.props.togglePlay(false);
   };
 
   onForward = () => {
@@ -87,12 +92,11 @@ class _Player extends React.Component {
   };
 
   setPlaying = () => {
-    this.setState({ isPlaying: !this.state.isPlaying });
+    this.props.togglePlay(!this.props.isPlaying);
   };
 
   togglePlayByKey = (key) => {
     if (key.key === " ") {
-      // key.preventDefault();
       this.setPlaying();
     }
   };
@@ -114,8 +118,8 @@ class _Player extends React.Component {
   render() {
     const { state, props } = this;
     const { currSongIdx, songs } = props.miniPlaylist;
-    const song = props.song;
-    const { isPlaying, isLooping, isMuted, volume, played, duration } = state;
+    const { song, isPlaying } = props;
+    const { isLooping, isMuted, volume, played, duration } = state;
     this.player = React.createRef();
     return (
       <>
@@ -260,8 +264,20 @@ class _Player extends React.Component {
             </div>
             <div className="right-player">
               <button onClick={() => this.setMute()}>
-                {isMuted ? (
-                  <i className="fa-solid fa-volume-high"></i>
+                {volume === "0" ? (
+                  <svg
+                    role="presentation"
+                    height="16"
+                    width="16"
+                    fill="white"
+                    aria-label="Volume off"
+                    id="volume-icon"
+                    viewBox="0 0 16 16"
+                    class="Svg-sc-1bi12j5-0 EQkJl"
+                  >
+                    <path d="M13.86 5.47a.75.75 0 00-1.061 0l-1.47 1.47-1.47-1.47A.75.75 0 008.8 6.53L10.269 8l-1.47 1.47a.75.75 0 101.06 1.06l1.47-1.47 1.47 1.47a.75.75 0 001.06-1.06L12.39 8l1.47-1.47a.75.75 0 000-1.06z"></path>
+                    <path d="M10.116 1.5A.75.75 0 008.991.85l-6.925 4a3.642 3.642 0 00-1.33 4.967 3.639 3.639 0 001.33 1.332l6.925 4a.75.75 0 001.125-.649v-1.906a4.73 4.73 0 01-1.5-.694v1.3L2.817 9.852a2.141 2.141 0 01-.781-2.92c.187-.324.456-.594.78-.782l5.8-3.35v1.3c.45-.313.956-.55 1.5-.694V1.5z"></path>
+                  </svg>
                 ) : (
                   <svg
                     role="presentation"
@@ -309,6 +325,7 @@ function mapStateToProps(state) {
 const mapDispatchToProps = {
   setSong,
   setMiniPlaylist,
+  togglePlay,
 };
 
 export const Player = connect(mapStateToProps, mapDispatchToProps)(_Player);

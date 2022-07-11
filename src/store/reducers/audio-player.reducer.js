@@ -20,12 +20,11 @@ const initialState = {
 export function audioPlayerReducer(state = initialState, action) {
     switch (action.type) {
         case 'SET_SONG':
-            console.log(action.song)
-            return { ...state, song: action.song }
+            return { ...state, song: action.song, isPlaying: true }
         // case 'SET_PLAYER':
         //     return { ...state, player: action.player }
-        // case 'TOGGLE_PLAY':
-        //     return { ...state, isPlaying: action.isPlaying }
+        case 'TOGGLE_PLAY':
+            return { ...state, isPlaying: action.isPlaying }
         case 'SET_MINI_PLAYLIST':
             // console.log(action.miniPlaylist)
             return { ...state, miniPlaylist: action.miniPlaylist }

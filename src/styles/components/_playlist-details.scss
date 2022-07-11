@@ -19,7 +19,7 @@
 
         .search-in-plst {
             min-height: 280px;
-            margin-top: 20px;
+            margin: 20px 0 0 50px;
 
             .search-in-plst-title {
                 padding: 50px 0 0 20px;
@@ -77,12 +77,13 @@
     }
 
     .song-preview {
-        margin: 10px 40px;
+        margin: 0px 40px;
         display: flex;
+        height: 56px;
         align-items: center;
         justify-content: space-between;
         font-family: book, sans-serif;
-        padding: 0 16px;
+        padding: 4px 16px;
         cursor: pointer;
 
         &:hover {

@@ -48,7 +48,6 @@
             .play-svg {
                 width: 20px;
                 height: 20px;
-
             }
 
         }
@@ -58,7 +57,7 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            font-family: book-bold;
+            font-family: book-bold, sans-serif;
             line-height: 2rem;
             margin-top: 10px;
         }

@@ -20,17 +20,17 @@ export function setSong(song) {
 // }
 
 
-// export function togglePlay() {
-//     return (dispatch, getState) => {
-//         const { player, isPlaying } = getState().audioPlayerModule
-//         audioPlayerService.togglePlay(player, isPlaying)
-//         dispatch({
-//             type: 'TOGGLE_PLAY',
-//             isPlaying: !isPlaying
-//         })
-
-//     }
-// }
+export function togglePlay(isPlaying) {
+    console.log("togglePlay")
+    return (dispatch) => {
+        // const { player, isPlaying } = getState().audioPlayerModule
+        // audioPlayerService.togglePlay(player, isPlaying)
+        dispatch({
+            type: 'TOGGLE_PLAY',
+            isPlaying
+        })
+    }
+}
 
 // export function changeSong(song) {
 //     return (dispatch) => {
@@ -42,6 +42,7 @@ export function setSong(song) {
 // }
 
 export function setMiniPlaylist(playlistId, songIdx = 0, songs, playlistName = '') {
+    console.log(playlistId, songIdx, songs, playlistName)
     return async (dispatch, getState) => {
         // const { isShuffled } = getState().audioPlayerModule
         const miniPlaylist = { currSongIdx: songIdx, playlistName: playlistName, playlistId }
