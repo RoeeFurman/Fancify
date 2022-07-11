@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Fancify/static/css/main.5bad8720.css",
-    "main.js": "/Fancify/static/js/main.9dffab5f.js",
+    "main.css": "/Fancify/static/css/main.2ef5caf3.css",
+    "main.js": "/Fancify/static/js/main.0127593f.js",
     "static/media/CircularStd-Light.otf": "/Fancify/static/media/CircularStd-Light.4a1a0bfcc3a53847a945.otf",
     "static/media/CircularStd-Bold.otf": "/Fancify/static/media/CircularStd-Bold.5c4514a8399ec0064b9b.otf",
     "service-worker.js": "/Fancify/service-worker.js",
@@ -9,11 +9,11 @@
     "static/media/GothamMedium.ttf": "/Fancify/static/media/GothamMedium.0a910c0b9d50be6aa3dc.ttf",
     "static/media/GothamBold.ttf": "/Fancify/static/media/GothamBold.108854bb27dee2dce854.ttf",
     "index.html": "/Fancify/index.html",
-    "main.5bad8720.css.map": "/Fancify/static/css/main.5bad8720.css.map",
-    "main.9dffab5f.js.map": "/Fancify/static/js/main.9dffab5f.js.map"
+    "main.2ef5caf3.css.map": "/Fancify/static/css/main.2ef5caf3.css.map",
+    "main.0127593f.js.map": "/Fancify/static/js/main.0127593f.js.map"
   },
   "entrypoints": [
-    "static/css/main.5bad8720.css",
-    "static/js/main.9dffab5f.js"
+    "static/css/main.2ef5caf3.css",
+    "static/js/main.0127593f.js"
   ]
 }
