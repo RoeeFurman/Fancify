@@ -6,25 +6,113 @@
     justify-content: center;
     padding: 30px;
     height: 100vh;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
     color: $main-white;
+
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgb(35, 35, 35) 100%);
 
     >* {
         padding: 10px;
     }
 
-    .counter {
-        >* {
-            padding: 10px;
+    h1,
+    a {
+        font-size: 4rem;
+        text-align: center;
+        font-family: book-bold;
+        text-shadow: 2px 4px 14px rgba(0, 0, 0, 0.78);
+        z-index: 10;
+        cursor: auto;
+    }
+
+    a {
+        font-size: 1.5rem;
+        transition: 0.3s;
+        cursor: pointer;
+        font-family: book;
+
+        &:hover {
+            text-decoration: none;
+            transform: scale(1.03);
         }
     }
+
 
     .logo-img-hp {
         height: 200px;
         width: 200px;
+        z-index: 10;
     }
 
     .bottom-title {
         margin-top: 10px;
+    }
+
+    .rolling-logos {
+
+        .rolling-logo {
+            position: absolute;
+            height: 100px;
+            width: 100px;
+            animation: rolling 15s infinite;
+            bottom: -20vh;
+            border-radius: 50%;
+            opacity: 0.7;
+
+            path {
+                fill: black;
+            }
+        }
+
+        :nth-child(1) {
+            animation: rolling 10s infinite;
+            height: 150px;
+            width: 150px;
+        }
+
+        :nth-child(2) {
+            animation: rolling 30s infinite;
+            animation-delay: 10s;
+            height: 60px;
+            width: 60px;
+        }
+
+        :nth-child(3) {
+            animation: rolling 25s infinite;
+            animation-delay: 25s;
+        }
+
+        :nth-child(4) {
+            animation: rolling 25s infinite;
+            animation-delay: 5s;
+            height: 70px;
+            width: 70px;
+        }
+
+        :nth-child(5) {
+            animation: rolling 25s infinite;
+            animation-delay: 3s;
+            height: 90px;
+            width: 90px;
+        }
+
+        :nth-child(6) {
+            animation: rolling 25s infinite;
+            animation-delay: 45s;
+        }
+    }
+
+    @keyframes rolling {
+        0% {
+            bottom: -15vh;
+        }
+
+        100% {
+            bottom: 110vh;
+        }
     }
 
 }

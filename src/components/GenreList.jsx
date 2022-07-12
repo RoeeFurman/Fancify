@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { playlistService } from "../services/playlistService";
-import { useSelector, useDispatch } from "react-redux";
-import { setSong } from "../store/actions/audio-player.action";
 import { PlaylistsList } from "./Playlistslist";
 import { useParams } from "react-router-dom";
 
@@ -10,6 +8,7 @@ export const GenreList = () => {
 
   useEffect(() => {
     loadPlaylists();
+    // loadTags();
   }, []);
 
   const [playlists, setplaylists] = useState([]);

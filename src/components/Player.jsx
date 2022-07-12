@@ -21,7 +21,7 @@ class _Player extends React.Component {
     duration: null,
     progress: null,
     played: 0,
-    volume: 0.9,
+    volume: +0.9,
   };
 
   componentDidMount = () => {
@@ -42,11 +42,10 @@ class _Player extends React.Component {
   };
 
   handleVolumeChange = (e) => {
-    console.log(e.target.value);
     if (!e.target.value) this.setMute();
     else {
       if (this.isMuted) this.setMute();
-      this.setState({ volume: e.target.value });
+      this.setState({ volume: +e.target.value });
     }
   };
 

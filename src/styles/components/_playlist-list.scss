@@ -3,6 +3,12 @@
     width: 100%;
     grid-template-columns: repeat(auto-fill, 220px);
 
+    @media (max-width: 1625px) {
+        grid-template-columns: repeat(auto-fill, 220px);
+        max-height: 266px;
+        overflow: hidden;
+    }
+
     .playlist-card {
         display: flex;
         flex-direction: column;
