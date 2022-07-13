@@ -5,8 +5,47 @@
         "nav main main";
     grid-template-columns: 230px 1fr;
 
-    @media (max-width: 400px) {
+    @media (max-width: 760px) {
         display: flex;
+        justify-content: center;
+    }
+
+    .little-menu-btn {
+        position: fixed;
+        right: 20px;
+        top: 20px;
+        background: none;
+        border: none;
+        color: $main-white;
+        visibility: hidden;
+        z-index: 5;
+
+        @media (max-width: 760px) {
+            visibility: visible;
+        }
+
+        .menu-brgr {
+            height: 25px;
+            background-color: $card-list-bg-hover;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+
+        .litle-nav {
+            position: absolute;
+            right: 5px;
+            top: 35px;
+            background-color: $card-list-bg-hover;
+            padding: 5px;
+
+            >* {
+                display: flex;
+                padding: 5px;
+                border-bottom: 1px solid $main-white;
+            }
+        }
+
     }
 
     .main-screen {
@@ -36,7 +75,7 @@
         min-height: 100vh;
         padding-top: 24px;
 
-        @media (max-width: 400px) {
+        @media (max-width: 760px) {
             display: none;
         }
 

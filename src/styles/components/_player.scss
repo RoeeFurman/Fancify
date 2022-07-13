@@ -10,7 +10,7 @@
     color: $main-white;
     height: auto;
 
-    @media (max-width: 400px) {
+    @media (max-width: 600px) {
         flex-direction: column;
         align-items: center;
         padding: 0px;
@@ -36,7 +36,7 @@
         width: 30%;
         min-width: 180px;
 
-        @media (max-width: 400px) {
+        @media (max-width: 600px) {
             display: none;
         }
     }
@@ -47,13 +47,12 @@
         width: 30%;
         min-width: 180px;
 
-        @media (max-width: 400px) {
+        @media (max-width: 600px) {
             width: 100%;
             justify-content: center;
             border-bottom: 1px solid $add-btn-border;
             border-top: 1px solid $add-btn-border;
             padding: 5px 0;
-
         }
 
         img {
@@ -107,7 +106,19 @@
         width: 40%;
         min-width: 722px;
 
-        @media (max-width: 400px) {
+        @media (max-width: 1200px) {
+            min-width: 400px;
+        }
+
+        @media (max-width: 900px) {
+            min-width: 100px;
+        }
+
+        @media (max-width: 700px) {
+            min-width: 50px;
+        }
+
+        @media (max-width: 600px) {
             min-width: 100%;
         }
 
@@ -119,7 +130,7 @@
             align-items: center;
             padding: 5px 0;
 
-            @media (max-width: 400px) {
+            @media (max-width: 600px) {
                 justify-content: center;
                 margin-bottom: 0px;
             }
@@ -137,7 +148,7 @@
                 justify-content: flex-end;
                 gap: 8px;
 
-                @media (max-width: 400px) {
+                @media (max-width: 600px) {
                     flex: none;
                 }
             }
@@ -152,7 +163,11 @@
                 justify-content: baseline;
                 align-items: center;
 
-                @media (max-width: 400px) {
+                @media (max-width: 900px) {
+                    min-width: 0px;
+                }
+
+                @media (max-width: 600px) {
                     flex: none;
                     width: auto;
                     min-width: auto
@@ -183,7 +198,8 @@
                 text-align: center;
                 font-size: 0.6875rem;
 
-                @media (max-width: 400px) {
+
+                @media (max-width: 700px) {
                     display: none;
                 }
             }

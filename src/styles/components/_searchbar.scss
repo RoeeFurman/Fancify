@@ -1,11 +1,11 @@
 .search-bar {
     padding: 10px;
     color: white;
+    margin-top: 20px;
 
-    @media (max-width: 400px) {
+    @media (max-width: 500px) {
         span {
             display: flex;
-
         }
     }
 
@@ -16,7 +16,7 @@
         width: 364px;
         height: 40px;
 
-        @media (max-width: 400px) {
+        @media (max-width: 500px) {
             width: 100%;
         }
 

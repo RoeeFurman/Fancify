@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, Route } from "react-router-dom";
 import { Player } from "../components/Player";
 import { Library } from "../components/Library";
@@ -9,6 +9,8 @@ import { MdHomeFilled } from "react-icons/md";
 import { RiSearchLine } from "react-icons/ri";
 
 export const HomeScreen = () => {
+  const [isMenueOpen, setMenuOpen] = useState(false);
+
   return (
     <section className="home-screen">
       <nav>
@@ -31,6 +33,29 @@ export const HomeScreen = () => {
           Search
         </Link>
       </nav>
+      <button
+        className="little-menu-btn"
+        onClick={() => setMenuOpen(!isMenueOpen)}
+      >
+        <img
+          src="https://icon-library.com/images/svg-menu-icon/svg-menu-icon-3.jpg"
+          alt="Hamburger-menu icons | Noun Project"
+          id="cpimg"
+          className="menu-brgr"
+        />
+        {isMenueOpen && (
+          <div className="litle-nav">
+            <Link to="/screen/">
+              <MdHomeFilled className="icon" />
+              Home
+            </Link>
+            <Link to="/screen/search">
+              <RiSearchLine className="icon" />
+              Search
+            </Link>
+          </div>
+        )}
+      </button>
       <div className="main-screen">
         <Route exact path="/screen/">
           <Library />

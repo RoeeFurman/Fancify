@@ -1,5 +1,4 @@
-// import { playlistService } from "../../services/playlist.service";
-// import { audioPlayerService } from "../../services/audio-player.service";
+
 
 export function setSong(song) {
     return (dispatch) => {
@@ -9,16 +8,6 @@ export function setSong(song) {
         })
     }
 }
-
-// export function setPlayer(player) {
-//     return (dispatch) => {
-//         dispatch({
-//             type: 'SET_PLAYER',
-//             player
-//         })
-//     }
-// }
-
 
 export function togglePlay(isPlaying) {
     return (dispatch) => {
@@ -30,15 +19,6 @@ export function togglePlay(isPlaying) {
         })
     }
 }
-
-// export function changeSong(song) {
-//     return (dispatch) => {
-//         dispatch({
-//             type: 'CHANGE_SONG',
-//             song
-//         })
-//     }
-// }
 
 export function setMiniPlaylist(playlistId, songIdx = 0, songs, playlistName = '') {
     return async (dispatch, getState) => {
@@ -53,30 +33,3 @@ export function setMiniPlaylist(playlistId, songIdx = 0, songs, playlistName = '
         })
     }
 }
-// export function setCurrTimePass(currTimePass) {
-//     return (dispatch) => {
-//         currTimePass = currTimePass.toFixed(0)
-//         dispatch({
-//             type: 'SET_TIME',
-//             currTimePass
-//         })
-//     }
-// }
-
-// export function toggleShuffle() {
-//     return async (dispatch, getState) => {
-//         const { isShuffled, miniPlaylist } = getState().audioPlayerModule
-//         let currSongIdx = 0
-//         if (!isShuffled) audioPlayerService.shuffleSongs(miniPlaylist.songs, miniPlaylist.currSongIdx)
-//         else {
-//             currSongIdx = miniPlaylist.songs[miniPlaylist.currSongIdx].initIdx
-//             audioPlayerService.unShuffleSongs(miniPlaylist.songs)
-//         }
-//         dispatch({
-//             type: 'TOGGLE_SHUFFLE',
-//             isShuffled: !isShuffled,
-//             songs: miniPlaylist.songs,
-//             currSongIdx
-//         })
-//     }
-// }

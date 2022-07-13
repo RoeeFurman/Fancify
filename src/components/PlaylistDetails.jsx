@@ -6,7 +6,7 @@ import { setSong, setMiniPlaylist } from "../store/actions/audio-player.action";
 import getAverageColor from "get-average-color";
 import { BsClock } from "react-icons/bs";
 import { SearchSection } from "./SearchSection";
-import { firebaseService } from "../services/firebaseServise";
+import { firebaseService } from "../services/firebaseService";
 
 export const PlaylistDetails = () => {
   const [currPlaylist, setCurrPlaylist] = useState(null);

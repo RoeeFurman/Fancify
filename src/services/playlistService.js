@@ -1,4 +1,4 @@
-import { firebaseService } from './firebaseServise'
+import { firebaseService } from './firebaseService'
 // const STORAGE_KEY = 'playlistDB'
 
 export const playlistService = {

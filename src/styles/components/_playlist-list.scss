@@ -9,6 +9,12 @@
         overflow: hidden;
     }
 
+    @media (max-width: 970px) {
+        display: flex;
+        flex-wrap: wrap;
+        max-height: 100%;
+    }
+
     .playlist-card {
         display: flex;
         flex-direction: column;
@@ -20,6 +26,16 @@
         border-radius: 5px;
         cursor: pointer;
         transition: 0.3s all;
+
+        @media (max-width: 970px) {
+            height: 200px;
+            width: 100%;
+        }
+
+        @media (max-width: 400px) {
+            height: 100%;
+            width: 100px;
+        }
 
         .card-img {
             position: relative;
@@ -66,6 +82,10 @@
             font-family: book-bold, sans-serif;
             line-height: 2rem;
             margin-top: 10px;
+
+            @media (max-width: 400px) {
+                font-size: 0.8rem;
+            }
         }
 
         h4 {
@@ -82,6 +102,16 @@
         img {
             height: 160px;
             width: 160px;
+
+            @media (max-width: 970px) {
+                height: 100px;
+                width: 100px;
+            }
+
+            @media (max-width: 400px) {
+                height: 80px;
+                width: 80px;
+            }
         }
     }
 }

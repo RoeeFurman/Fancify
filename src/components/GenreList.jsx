@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { firebaseService } from "../services/firebaseServise";
+import { firebaseService } from "../services/firebaseService";
 import { PlaylistsList } from "./Playlistslist";
 import { useParams } from "react-router-dom";
 
