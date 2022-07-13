@@ -6,7 +6,7 @@ const monitorReducerEnhancer =
       const start = performance.now()
       const newState = reducer(state, action)
       const end = performance.now()
-      const diff = round(end - start)
+      // const diff = round(end - start)
 
       // console.log('reducer process time:', diff)
 

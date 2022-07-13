@@ -1,9 +1,9 @@
-import { PLAYLIST_DATA } from '../data/demo-data'
+import { firebaseService } from './firebaseServise'
 // const STORAGE_KEY = 'playlistDB'
 
 export const playlistService = {
     query,
-    getById,
+    // getById,
     // save,
     // makeDummy,
     addSong,
@@ -16,19 +16,20 @@ export const playlistService = {
 
 // window.ps = playlistService
 
-function query(filterBy = null) {
+async function query(filterBy = null) {
     // console.log('query by', filterBy)
-    const playlists = PLAYLIST_DATA.filter(playlist => playlist.tags.includes(filterBy))
+    const playlists = await firebaseService.getDocuments()
+    // const playlists = PLAYLIST_DATA.filter(playlist => playlist.tags.includes(filterBy))
     return Promise.resolve(playlists)
     // return httpService.get(`playlist/?tags=${filterBy.tags}`)
 }
 
-async function getById(playlistId, filterBy) {
-    // console.log(playlistId)
-    return Promise.resolve(PLAYLIST_DATA.filter(playlist => playlist._id === playlistId))
-    // return await storageService.get(STORAGE_KEY, playlistId, filterBy)
-    // return httpService.get(`playlist/${playlistId}`)
-}
+// async function getById(playlistId, filterBy) {
+//     // console.log(playlistId)
+//     return Promise.resolve(PLAYLIST_DATA.filter(playlist => playlist._id === playlistId))
+//     // return await storageService.get(STORAGE_KEY, playlistId, filterBy)
+//     // return httpService.get(`playlist/${playlistId}`)
+// }
 
 // async function save(playlist, user) {
 //     if (playlist._id) return await httpService.put(`playlist/${playlist._id}`, playlist)

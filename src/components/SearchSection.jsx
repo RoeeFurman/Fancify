@@ -16,15 +16,15 @@ export const SearchSection = ({ onAddSong }) => {
     if (timeOutId.current) clearTimeout(timeOutId.current);
     timeOutId.current = setTimeout(async () => {
       var searchSongs = await youtubeService.query(song);
+      console.log(searchSongs);
       if (searchSongs.items.length > 4)
         setSearchSongs(searchSongs.items.slice(0, 4));
       else setSearchSongs(searchSongs.items);
       timeOutId.current = null;
-    }, 400);
+    }, 700);
   };
 
   const setVideoId = (song) => {
-    console.log(song);
     if (param.id) return;
     const currSongMap = {
       id: song.id.videoId,
@@ -46,7 +46,10 @@ export const SearchSection = ({ onAddSong }) => {
               <div className="top-results">
                 <h1 className="title">Top result</h1>
                 <div className="top-result">
-                  <img src={searchSongs[0].snippet.thumbnails.default.url} />
+                  <img
+                    src={searchSongs[0].snippet.thumbnails.default.url}
+                    alt={searchSongs[0].snippet.title}
+                  />
                   <h2 onClick={() => setVideoId(searchSongs[0])}>
                     {searchSongs[0].snippet.title}
                   </h2>
@@ -59,7 +62,10 @@ export const SearchSection = ({ onAddSong }) => {
               <ul>
                 {searchSongs.map((song) => (
                   <li className="result" key={song.etag}>
-                    <img src={song.snippet.thumbnails.default.url} />
+                    <img
+                      src={song.snippet.thumbnails.default.url}
+                      alt={song.snippet.thumbnails.default.url}
+                    />
                     <div className="result-titles">
                       <h2 onClick={() => setVideoId(song)}>
                         {song.snippet.title}

@@ -5,6 +5,10 @@
         "nav main main";
     grid-template-columns: 230px 1fr;
 
+    @media (max-width: 400px) {
+        display: flex;
+    }
+
     .main-screen {
         width: 100%;
         height: 100vh;
@@ -31,6 +35,10 @@
         flex-direction: column;
         min-height: 100vh;
         padding-top: 24px;
+
+        @media (max-width: 400px) {
+            display: none;
+        }
 
         .is-active {
             color: $main-white;

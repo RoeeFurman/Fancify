@@ -2,12 +2,23 @@
     padding: 10px;
     color: white;
 
+    @media (max-width: 400px) {
+        span {
+            display: flex;
+
+        }
+    }
+
     input {
         margin: 0 10px;
         padding: 6px 48px;
         border-radius: 50px;
         width: 364px;
         height: 40px;
+
+        @media (max-width: 400px) {
+            width: 100%;
+        }
 
         &:focus {
             outline: none;
@@ -17,7 +28,6 @@
     .search-btn {
         background: none;
         border: none;
-        // background-color: $main-white;
         padding: 5px;
         border-radius: 50%;
         color: white;

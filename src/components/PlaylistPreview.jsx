@@ -1,4 +1,4 @@
-import { Switch, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setMiniPlaylist } from "../store/actions/audio-player.action";
 
@@ -7,8 +7,8 @@ export const PlaylistPreview = ({ playlist }) => {
   const dispatch = useDispatch();
 
   const openPlaylist = (playlist) => {
-    history.push(`/screen/library/${playlist._id}/`);
-    dispatch(setMiniPlaylist(playlist._id, 0, playlist.songs, playlist.name));
+    history.push(`/screen/library/${playlist.id}/`);
+    dispatch(setMiniPlaylist(playlist.id, 0, playlist.songs, playlist.name));
   };
 
   return (
@@ -16,7 +16,7 @@ export const PlaylistPreview = ({ playlist }) => {
       {playlist && (
         <div className="playlist-card" onClick={() => openPlaylist(playlist)}>
           <div className="card-img">
-            <img src={playlist.imgUrl} />
+            <img src={playlist.imgUrl} alt={playlist.name} />
             <div className="play-div">
               <svg
                 role="img"

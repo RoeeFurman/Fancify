@@ -3,7 +3,7 @@ import thunkMiddleware from 'redux-thunk'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
 import monitorReducersEnhancer from './store/enhancers/monitor-reducers'
-import { logger } from './store/middleware/logger'
+// import { logger } from './store/middleware/logger'
 import { rootReducer } from './store/root.reducer'
 // import {initialState} from './store/initial-state'
 

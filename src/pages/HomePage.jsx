@@ -23,6 +23,7 @@ export const HomePage = () => {
         <img
           className="logo-img-hp"
           src="https://www.shareicon.net/data/512x512/2016/11/05/850979_music_512x512.png"
+          alt="logo"
         />
         <div className="bottom-title">Click here to start, it's free</div>
       </Link>
@@ -30,6 +31,7 @@ export const HomePage = () => {
         {logos?.map((logo, idx) => {
           return (
             <div
+              key={idx}
               className={"rolling-logo"}
               style={{
                 left:
@@ -38,8 +40,6 @@ export const HomePage = () => {
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                height="168px"
-                width="168px"
                 version="1.1"
                 viewBox="0 0 168 168"
               >

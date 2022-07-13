@@ -21,7 +21,6 @@ export function setSong(song) {
 
 
 export function togglePlay(isPlaying) {
-    console.log("togglePlay")
     return (dispatch) => {
         // const { player, isPlaying } = getState().audioPlayerModule
         // audioPlayerService.togglePlay(player, isPlaying)
@@ -42,7 +41,6 @@ export function togglePlay(isPlaying) {
 // }
 
 export function setMiniPlaylist(playlistId, songIdx = 0, songs, playlistName = '') {
-    console.log(playlistId, songIdx, songs, playlistName)
     return async (dispatch, getState) => {
         // const { isShuffled } = getState().audioPlayerModule
         const miniPlaylist = { currSongIdx: songIdx, playlistName: playlistName, playlistId }

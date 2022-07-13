@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { playlistService } from "../services/playlistService";
+import { firebaseService } from "../services/firebaseServise";
 import { PlaylistsList } from "./Playlistslist";
 import { useParams } from "react-router-dom";
 
@@ -8,14 +8,15 @@ export const GenreList = () => {
 
   useEffect(() => {
     loadPlaylists();
-    // loadTags();
   }, []);
 
   const [playlists, setplaylists] = useState([]);
 
   const loadPlaylists = async () => {
-    const playlists = await playlistService.query(params.tag);
-    setplaylists(playlists);
+    const playlists = await firebaseService.getDocuments();
+    setplaylists(
+      playlists.filter((playlist) => playlist.tags.includes(params.tag))
+    );
   };
 
   return (

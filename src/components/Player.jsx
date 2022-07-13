@@ -5,13 +5,9 @@ import { connect } from "react-redux";
 import { playlistService } from "../services/playlistService";
 
 import {
-  setPlayer,
   setSong,
   setMiniPlaylist,
   togglePlay,
-  changeSong,
-  setCurrTimePass,
-  toggleShuffle,
 } from "../store/actions/audio-player.action";
 
 class _Player extends React.Component {
@@ -21,7 +17,7 @@ class _Player extends React.Component {
     duration: null,
     progress: null,
     played: 0,
-    volume: +0.9,
+    volume: 0.9,
   };
 
   componentDidMount = () => {
@@ -33,7 +29,7 @@ class _Player extends React.Component {
   };
 
   handleProgress = (state) => {
-    if (state.played > 0.995) this.onForward();
+    if (state.played > 0.995 && !this.state.isLooping) this.onForward();
     this.setState({ played: state.played });
 
     if (!this.state.progress) {
@@ -42,7 +38,7 @@ class _Player extends React.Component {
   };
 
   handleVolumeChange = (e) => {
-    if (!e.target.value) this.setMute();
+    if (e.target.value === "0") this.setMute();
     else {
       if (this.isMuted) this.setMute();
       this.setState({ volume: +e.target.value });
@@ -94,10 +90,11 @@ class _Player extends React.Component {
     this.props.togglePlay(!this.props.isPlaying);
   };
 
-  togglePlayByKey = (key) => {
-    if (key.key === " ") {
-      this.setPlaying();
-    }
+  togglePlayByKey = (e) => {
+    // e.stopPropagation();
+    // if (e.key === " ") {
+    //   this.setPlaying();
+    // }
   };
 
   onLikeSong = async (ev, id) => {
@@ -165,7 +162,7 @@ class _Player extends React.Component {
                   className="screen"
                   url={"https://www.youtube.com/watch?v=" + song?.id}
                   playing={isPlaying}
-                  muted={isMuted}
+                  // muted={isMuted}
                   volume={volume}
                   loop={isLooping}
                   onDuration={this.handleDuration}
@@ -316,9 +313,6 @@ function mapStateToProps(state) {
     song: state.audioPlayerModule.song,
     isPlaying: state.audioPlayerModule.isPlaying,
     miniPlaylist: state.audioPlayerModule.miniPlaylist,
-    // currTimePass: state.audioPlayerModule.currTimePass,
-    // isShuffled: state.audioPlayerModule.isShuffled,
-    // user: state.userModule.user
   };
 }
 const mapDispatchToProps = {

@@ -16,7 +16,11 @@ export const TagsList = ({ tags }) => {
                   {tag && (
                     <div>
                       <h2>{tag?.title}</h2>
-                      <img className="tag-img" src={tag.imgUrl} />
+                      <img
+                        className="tag-img"
+                        src={tag.imgUrl}
+                        alt={tag.title}
+                      />
                     </div>
                   )}
                 </div>

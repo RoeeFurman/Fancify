@@ -2,14 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { playlistService } from "../services/playlistService";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  setSong,
-  setMiniPlaylist,
-  togglePlay,
-} from "../store/actions/audio-player.action";
+import { setSong, setMiniPlaylist } from "../store/actions/audio-player.action";
 import getAverageColor from "get-average-color";
 import { BsClock } from "react-icons/bs";
 import { SearchSection } from "./SearchSection";
+import { firebaseService } from "../services/firebaseServise";
 
 export const PlaylistDetails = () => {
   const [currPlaylist, setCurrPlaylist] = useState(null);
@@ -31,36 +28,33 @@ export const PlaylistDetails = () => {
 
   const getAvgColor = async (url) => {
     const rgb = await getAverageColor(url);
-    console.log(rgb);
     setCurrImgAvgColor(rgb);
   };
 
   const getPlaylistDetails = async () => {
-    console.log(id);
-    const playlist = await playlistService.getById(id);
-    console.log(...playlist);
-    dispatch(
-      setMiniPlaylist(playlist[0]._id, 0, playlist[0].songs, playlist[0].name)
-    );
-    setCurrPlaylist(...playlist);
+    const playlist = await firebaseService.getDocument("playlists", id);
+
+    dispatch(setMiniPlaylist(playlist.id, 0, playlist.songs, playlist.name));
+    setCurrPlaylist(playlist);
   };
 
   const setVideoId = async (song) => {
-    console.log(isPlaying);
     dispatch(setSong(song));
   };
 
   const onRemoveSong = async (ev, id) => {
     ev.stopPropagation();
-    const updatedPlaylist = await playlistService.removeSong(id, currPlaylist);
-    setCurrPlaylist(updatedPlaylist);
+    const idx = currPlaylist.songs.findIndex((currsong) => currsong.id === id);
+    currPlaylist.songs.splice(idx, 1);
+
+    const updatedPlaylist = await firebaseService.updatePlaylist(
+      "playlists",
+      currPlaylist.id,
+      currPlaylist.songs
+    );
+    setCurrPlaylist({ ...currPlaylist, songs: currPlaylist.songs });
     dispatch(
-      setMiniPlaylist(
-        updatedPlaylist._id,
-        0,
-        updatedPlaylist.songs,
-        updatedPlaylist.name
-      )
+      setMiniPlaylist(currPlaylist.id, 0, currPlaylist.songs, currPlaylist.name)
     );
   };
 
@@ -70,16 +64,12 @@ export const PlaylistDetails = () => {
     setCurrPlaylist(updatedPlaylist);
     dispatch(
       setMiniPlaylist(
-        updatedPlaylist._id,
+        updatedPlaylist.id,
         0,
         updatedPlaylist.songs,
         updatedPlaylist.name
       )
     );
-  };
-
-  const openSongMenu = () => {
-    setisMenuOpen(!isMenuOpen);
   };
 
   const onAddSong = async (song) => {
@@ -90,17 +80,15 @@ export const PlaylistDetails = () => {
       channelTitle: song.snippet.channelTitle,
       initIdx: currPlaylist.songs.length,
     };
-    const updatedPlaylist = await playlistService.addSong(
-      songToAdd,
-      currPlaylist
+
+    currPlaylist.songs.push(songToAdd);
+    const updatedPlaylist = await firebaseService.updatePlaylist(
+      "playlists",
+      currPlaylist.id,
+      currPlaylist.songs
     );
     dispatch(
-      setMiniPlaylist(
-        updatedPlaylist,
-        0,
-        updatedPlaylist.songs,
-        updatedPlaylist.name
-      )
+      setMiniPlaylist(updatedPlaylist, 0, currPlaylist.songs, currPlaylist.name)
     );
   };
 
@@ -152,7 +140,11 @@ export const PlaylistDetails = () => {
                   <div className="idx">{currSong.initIdx + 1}</div>
                 )}
                 <div className="song-details">
-                  <img src={currSong.imgUrl} className="song-img-preview" />
+                  <img
+                    src={currSong.imgUrl}
+                    className="song-img-preview"
+                    alt={currSong.title}
+                  />
                   <h4>{currSong.title}</h4>
                 </div>
                 <div onClick={(ev) => onLikeSong(ev, currSong.id)}>
@@ -202,27 +194,3 @@ export const PlaylistDetails = () => {
     </section>
   );
 };
-
-// function mapStateToProps(state) {
-//   return {
-//     song: state.audioPlayerModule.song,
-//     miniPlaylist: state.audioPlayerModule.miniPlaylist,
-//     // currTimePass: state.audioPlayerModule.currTimePass,
-//     // isShuffled: state.audioPlayerModule.isShuffled,
-//     // user: state.userModule.user
-//   };
-// }
-// const mapDispatchToProps = {
-//   // setPlayer,
-//   // togglePlay,
-//   // changeSong,
-//   setSong,
-//   // setCurrTimePass,
-//   // toggleShuffle,
-//   // toggleLike,
-// };
-
-// export const PlaylistDetails = connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(_PlaylistDetails);

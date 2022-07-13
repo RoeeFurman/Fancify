@@ -36,7 +36,7 @@
 
         &:hover {
             text-decoration: none;
-            transform: scale(1.03);
+            transform: scale(1.07);
         }
     }
 
@@ -55,12 +55,16 @@
 
         .rolling-logo {
             position: absolute;
-            height: 100px;
-            width: 100px;
             animation: rolling 15s infinite;
             bottom: -20vh;
             border-radius: 50%;
             opacity: 0.7;
+            transition: 0.4s all;
+
+            &:hover {
+                transform: scale(0.95) rotatey(40deg);
+
+            }
 
             path {
                 fill: black;
@@ -68,40 +72,58 @@
         }
 
         :nth-child(1) {
-            animation: rolling 10s infinite;
-            height: 150px;
-            width: 150px;
+            animation: rolling 14s infinite;
+
+            svg {
+                height: 160px;
+                width: 160px;
+            }
+
         }
 
         :nth-child(2) {
             animation: rolling 30s infinite;
-            animation-delay: 10s;
-            height: 60px;
-            width: 60px;
+
+            svg {
+                height: 120px;
+                width: 120px;
+            }
         }
 
         :nth-child(3) {
-            animation: rolling 25s infinite;
-            animation-delay: 25s;
+            animation: rolling 15s infinite;
+            animation-delay: 10s;
         }
 
         :nth-child(4) {
-            animation: rolling 25s infinite;
+            animation: rolling 18s infinite;
             animation-delay: 5s;
-            height: 70px;
-            width: 70px;
+
+            svg {
+                height: 100px;
+                width: 100px;
+            }
         }
 
         :nth-child(5) {
-            animation: rolling 25s infinite;
-            animation-delay: 3s;
-            height: 90px;
-            width: 90px;
+            animation: rolling 20s infinite;
+            animation-delay: 8s;
+
+            svg {
+                height: 80px;
+                width: 80px;
+            }
         }
 
         :nth-child(6) {
-            animation: rolling 25s infinite;
-            animation-delay: 45s;
+            animation: rolling 23s infinite;
+            animation-delay: 14s;
+
+            svg {
+                height: 168px;
+                width: 168p;
+
+            }
         }
     }
 

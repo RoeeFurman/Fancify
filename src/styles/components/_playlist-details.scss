@@ -13,6 +13,11 @@
         background-color: transparent;
         padding: 0 16px;
 
+        @media (max-width: 400px) {
+            margin-top: 20px;
+            padding: 0 0;
+        }
+
         li {
             padding: 0 16px;
         }
@@ -20,6 +25,10 @@
         .search-in-plst {
             min-height: 280px;
             margin: 20px 0 0 50px;
+
+            @media (max-width: 400px) {
+                margin: 20px 0 0 0;
+            }
 
             .search-in-plst-title {
                 padding: 50px 0 0 20px;
@@ -41,6 +50,13 @@
         position: relative;
         padding: 62px 30px 30px;
 
+        @media (max-width: 400px) {
+            flex-direction: column;
+            padding: 42px 20px 20px;
+            height: auto;
+        }
+
+
         &:after {
             content: '';
             height: 300px;
@@ -61,9 +77,18 @@
 
         h1 {
             font-family: gotham-bold, sans-serif;
-            font-size: 96px;
+            font-size: 6em;
             margin-left: 30px;
             margin-bottom: 10px;
+
+            @media (max-width: 400px) {
+                font-size: 2rem;
+                margin-top: 20px;
+                margin-bottom: 0px;
+                margin-left: 0;
+
+            }
+
         }
 
         h2 {
@@ -86,6 +111,11 @@
         padding: 4px 16px;
         cursor: pointer;
 
+        @media (max-width: 400px) {
+            margin: 0 0;
+            padding: 0 5px;
+        }
+
         &:hover {
             background-color: hsla(0, 0%, 100%, .1);
 
@@ -97,6 +127,9 @@
         .idx {
             flex-basis: 40px;
 
+            @media (max-width: 400px) {
+                display: none;
+            }
         }
 
         button {
@@ -104,6 +137,10 @@
             background: none;
             border: none;
             color: $player-scnd-txt;
+
+            @media (max-width: 400px) {
+                display: none;
+            }
 
             &:hover {
                 color: $main-white;
@@ -148,6 +185,10 @@
         justify-content: space-between;
         padding: 10px 16px;
         border-bottom: 1px solid hsla(0, 0%, 100%, .1);
+
+        @media (max-width: 400px) {
+            display: none;
+        }
 
         .idx {
             width: 10px;

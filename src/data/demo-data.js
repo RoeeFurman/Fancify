@@ -1,276 +1,276 @@
 export const PLAYLIST_DATA = [
     {
-        "name": "The Rock Workout",
-        "description": "For when only raw rock will do...",
-        "imgUrl": "https://res.cloudinary.com/dc3nhq1gd/image/upload/v1653810785/sal4nosav42quwxwrtbo.jpg",
-        "tags": ["Rock"],
-        "createdAt": 1653810961836,
-        "createdBy": {
-            "_id": "u100",
-            "fullname": "UpBeat"
-        },
-        "songs": [],
-        "_id": "zaXof"
+        // "name": "The Rock Workout",
+        // "description": "For when only raw rock will do...",
+        // "imgUrl": "https://res.cloudinary.com/dc3nhq1gd/image/upload/v1653810785/sal4nosav42quwxwrtbo.jpg",
+        // "tags": ["Rock"],
+        // "createdAt": 1653810961836,
+        // "createdBy": {
+        //     "_id": "u100",
+        //     "fullname": "UpBeat"
+        // },
+        // "songs": [],
+        // "_id": "zaXof"
     },
     {
-        "name": "All New Rock",
-        "description": "The best new tracks every week. Cover: Liam Gallagher",
-        "imgUrl": "https://res.cloudinary.com/dc3nhq1gd/image/upload/v1653811207/vpm8lsa3hbshjeasumcs.jpg",
-        "tags": ["Rock"],
-        "createdAt": 1653811244879,
-        "createdBy": {
-            "_id": "u100",
-            "fullname": "UpBeat"
-        },
-        "songs": [],
-        "_id": "s30pF"
+        // "name": "All New Rock",
+        // "description": "The best new tracks every week. Cover: Liam Gallagher",
+        // "imgUrl": "https://res.cloudinary.com/dc3nhq1gd/image/upload/v1653811207/vpm8lsa3hbshjeasumcs.jpg",
+        // "tags": ["Rock"],
+        // "createdAt": 1653811244879,
+        // "createdBy": {
+        //     "_id": "u100",
+        //     "fullname": "UpBeat"
+        // },
+        // "songs": [],
+        // "_id": "s30pF"
     },
     {
-        "name": "90s Rock Anthems",
-        "description": "These songs rocked the 90s. Cover: Rage Against The Machine.",
-        "imgUrl": "https://res.cloudinary.com/dc3nhq1gd/image/upload/v1653811307/lsko3glyk1fehmpqhhcs.jpg",
-        "tags": ["Rock"],
-        "createdAt": 1653811330556,
-        "createdBy": {
-            "_id": "u100",
-            "fullname": "UpBeat"
-        },
-        "songs": [],
-        "_id": "kX40j"
+        // "name": "90s Rock Anthems",
+        // "description": "These songs rocked the 90s. Cover: Rage Against The Machine.",
+        // "imgUrl": "https://res.cloudinary.com/dc3nhq1gd/image/upload/v1653811307/lsko3glyk1fehmpqhhcs.jpg",
+        // "tags": ["Rock"],
+        // "createdAt": 1653811330556,
+        // "createdBy": {
+        //     "_id": "u100",
+        //     "fullname": "UpBeat"
+        // },
+        // "songs": [],
+        // "_id": "kX40j"
+    },
+    // {
+    //     "name": "Jazz Classics",
+    //     "description": "The best tunes in jazz history. Cover: Ella Fitzgerald",
+    //     "imgUrl": "https://res.cloudinary.com/dc3nhq1gd/image/upload/v1653811772/ziojomxfytltm2cz9jgf.jpg",
+    //     "tags": ["Jazz"],
+    //     "createdAt": 1653811877646,
+    //     "createdBy": {
+    //         "_id": "u100",
+    //         "fullname": "UpBeat"
+    //     },
+    //     "songs": [
+    //         {
+    //             "id": "KBR8-2OrtT4",
+    //             "title": "But Not For Me (Vocal Version)",
+    //             "imgUrl": "https://i.ytimg.com/vi/KBR8-2OrtT4/hqdefault.jpg",
+    //             "duration": {
+    //                 "total": 185,
+    //                 "display": "3:05"
+    //             },
+    //             "idx": 0,
+    //             "addedAt": 1653811895781,
+    //             "addedBy": "Guest"
+    //         },
+    //         {
+    //             "id": "ZEcqHA7dbwM",
+    //             "title": "Fly Me To The Moon (2008 Remastered)",
+    //             "imgUrl": "https://i.ytimg.com/vi/ZEcqHA7dbwM/hqdefault.jpg",
+    //             "duration": {
+    //                 "total": 148,
+    //                 "display": "2:28"
+    //             },
+    //             "idx": 0,
+    //             "addedAt": 1653811905013,
+    //             "addedBy": "Guest"
+    //         },
+    //         {
+    //             "id": "T73nyTuwj1A",
+    //             "title": "Señor Mouse",
+    //             "imgUrl": "https://i.ytimg.com/vi/T73nyTuwj1A/hqdefault.jpg",
+    //             "duration": {
+    //                 "total": 441,
+    //                 "display": "7:21"
+    //             },
+    //             "idx": 1,
+    //             "addedAt": 1653811920895,
+    //             "addedBy": "Guest"
+    //         },
+    //         {
+    //             "id": "Cv9NSR-2DwM",
+    //             "title": "Art Blakey &amp; the Jazz Messengers - Moanin'",
+    //             "imgUrl": "https://i.ytimg.com/vi/Cv9NSR-2DwM/hqdefault.jpg",
+    //             "duration": {
+    //                 "total": 582,
+    //                 "display": "9:42"
+    //             },
+    //             "idx": 0,
+    //             "addedAt": 1653811939817,
+    //             "addedBy": "Guest"
+    //         },
+    //         {
+    //             "id": "KV8Hj_E8LJc",
+    //             "title": "Duke Ellington - Take the a train",
+    //             "imgUrl": "https://i.ytimg.com/vi/KV8Hj_E8LJc/hqdefault.jpg",
+    //             "duration": {
+    //                 "total": 174,
+    //                 "display": "2:54"
+    //             },
+    //             "idx": 1,
+    //             "addedAt": 1653811956341,
+    //             "addedBy": "Guest"
+    //         },
+    //         {
+    //             "id": "xGVdAlxlp18",
+    //             "title": "Miles Davis - On Green Dolphin Street (Official Audio)",
+    //             "imgUrl": "https://i.ytimg.com/vi/xGVdAlxlp18/hqdefault.jpg",
+    //             "duration": {
+    //                 "total": 590,
+    //                 "display": "9:50"
+    //             },
+    //             "idx": 0,
+    //             "addedAt": 1653812006991,
+    //             "addedBy": "Guest"
+    //         },
+    //         {
+    //             "id": "EUxv3AAaK_Y",
+    //             "title": "Blue Bossa (Remastered)",
+    //             "imgUrl": "https://i.ytimg.com/vi/EUxv3AAaK_Y/hqdefault.jpg",
+    //             "duration": {
+    //                 "total": 483,
+    //                 "display": "8:03"
+    //             },
+    //             "idx": 3,
+    //             "addedAt": 1653812028520,
+    //             "addedBy": "Guest"
+    //         },
+    //         {
+    //             "id": "zTVlrOk9a8M",
+    //             "title": "Autumn Leaves",
+    //             "imgUrl": "https://i.ytimg.com/vi/zTVlrOk9a8M/hqdefault.jpg",
+    //             "duration": {
+    //                 "total": 423,
+    //                 "display": "7:03"
+    //             },
+    //             "idx": 0,
+    //             "addedAt": 1653812051641,
+    //             "addedBy": "Guest"
+    //         },
+    //         {
+    //             "id": "8xNbqG9PtyE",
+    //             "title": "Four",
+    //             "imgUrl": "https://i.ytimg.com/vi/8xNbqG9PtyE/hqdefault.jpg",
+    //             "duration": {
+    //                 "total": 436,
+    //                 "display": "7:16"
+    //             },
+    //             "idx": 0,
+    //             "addedAt": 1653812125657,
+    //             "addedBy": "Guest"
+    //         },
+    //         {
+    //             "id": "3MkUvZUTFUc",
+    //             "title": "Sonny Rollins Quartet with John Coltrane - Tenor Madness",
+    //             "imgUrl": "https://i.ytimg.com/vi/3MkUvZUTFUc/hqdefault.jpg",
+    //             "duration": {
+    //                 "total": 747,
+    //                 "display": "12:27"
+    //             },
+    //             "idx": 0,
+    //             "addedAt": 1653812158408,
+    //             "addedBy": "Guest"
+    //         },
+    //         {
+    //             "id": "xu0L3tB_9zw",
+    //             "title": "Joe Pass - Chloe",
+    //             "imgUrl": "https://i.ytimg.com/vi/xu0L3tB_9zw/hqdefault.jpg",
+    //             "duration": {
+    //                 "total": 324,
+    //                 "display": "5:24"
+    //             },
+    //             "idx": 0,
+    //             "addedAt": 1653812166936,
+    //             "addedBy": "Guest"
+    //         },
+    //         {
+    //             "id": "UA2XIWZxMKM",
+    //             "title": "SONNY ROLLINS.St. Thomas",
+    //             "imgUrl": "https://i.ytimg.com/vi/UA2XIWZxMKM/hqdefault.jpg",
+    //             "duration": {
+    //                 "total": 409,
+    //                 "display": "6:49"
+    //             },
+    //             "idx": 0,
+    //             "addedAt": 1653812174283,
+    //             "addedBy": "Guest"
+    //         },
+    //         {
+    //             "id": "Hp5B64jXbu0",
+    //             "title": "Chick Corea - Windows",
+    //             "imgUrl": "https://i.ytimg.com/vi/Hp5B64jXbu0/hqdefault.jpg",
+    //             "duration": {
+    //                 "total": 195,
+    //                 "display": "3:15"
+    //             },
+    //             "idx": 0,
+    //             "addedAt": 1653812188711,
+    //             "addedBy": "Guest"
+    //         },
+    //         {
+    //             "id": "zDCjc0jjgHw",
+    //             "title": "Art Pepper - Four Brothers",
+    //             "imgUrl": "https://i.ytimg.com/vi/zDCjc0jjgHw/hqdefault.jpg",
+    //             "duration": {
+    //                 "total": 174,
+    //                 "display": "2:54"
+    //             },
+    //             "idx": 0,
+    //             "addedAt": 1653812224370,
+    //             "addedBy": "Guest"
+    //         }
+    //     ],
+    //     "_id": "Ryn3M"
+    // },
+    {
+        // "name": "Jazz in the Background",
+        // "description": "Soft jazz for all your activities.",
+        // "imgUrl": "https://res.cloudinary.com/dc3nhq1gd/image/upload/v1653812642/lpelp2tr2erb2qh7iawg.jpg",
+        // "tags": ["Jazz"],
+        // "createdAt": 1653812643777,
+        // "createdBy": {
+        //     "_id": "u100",
+        //     "fullname": "UpBeat"
+        // },
+        // "songs": [],
+        // "_id": "z2oTx"
     },
     {
-        "name": "Jazz Classics",
-        "description": "The best tunes in jazz history. Cover: Ella Fitzgerald",
-        "imgUrl": "https://res.cloudinary.com/dc3nhq1gd/image/upload/v1653811772/ziojomxfytltm2cz9jgf.jpg",
-        "tags": ["Jazz"],
-        "createdAt": 1653811877646,
-        "createdBy": {
-            "_id": "u100",
-            "fullname": "UpBeat"
-        },
-        "songs": [
-            {
-                "id": "KBR8-2OrtT4",
-                "title": "But Not For Me (Vocal Version)",
-                "imgUrl": "https://i.ytimg.com/vi/KBR8-2OrtT4/hqdefault.jpg",
-                "duration": {
-                    "total": 185,
-                    "display": "3:05"
-                },
-                "idx": 0,
-                "addedAt": 1653811895781,
-                "addedBy": "Guest"
-            },
-            {
-                "id": "ZEcqHA7dbwM",
-                "title": "Fly Me To The Moon (2008 Remastered)",
-                "imgUrl": "https://i.ytimg.com/vi/ZEcqHA7dbwM/hqdefault.jpg",
-                "duration": {
-                    "total": 148,
-                    "display": "2:28"
-                },
-                "idx": 0,
-                "addedAt": 1653811905013,
-                "addedBy": "Guest"
-            },
-            {
-                "id": "T73nyTuwj1A",
-                "title": "Señor Mouse",
-                "imgUrl": "https://i.ytimg.com/vi/T73nyTuwj1A/hqdefault.jpg",
-                "duration": {
-                    "total": 441,
-                    "display": "7:21"
-                },
-                "idx": 1,
-                "addedAt": 1653811920895,
-                "addedBy": "Guest"
-            },
-            {
-                "id": "Cv9NSR-2DwM",
-                "title": "Art Blakey &amp; the Jazz Messengers - Moanin'",
-                "imgUrl": "https://i.ytimg.com/vi/Cv9NSR-2DwM/hqdefault.jpg",
-                "duration": {
-                    "total": 582,
-                    "display": "9:42"
-                },
-                "idx": 0,
-                "addedAt": 1653811939817,
-                "addedBy": "Guest"
-            },
-            {
-                "id": "KV8Hj_E8LJc",
-                "title": "Duke Ellington - Take the a train",
-                "imgUrl": "https://i.ytimg.com/vi/KV8Hj_E8LJc/hqdefault.jpg",
-                "duration": {
-                    "total": 174,
-                    "display": "2:54"
-                },
-                "idx": 1,
-                "addedAt": 1653811956341,
-                "addedBy": "Guest"
-            },
-            {
-                "id": "xGVdAlxlp18",
-                "title": "Miles Davis - On Green Dolphin Street (Official Audio)",
-                "imgUrl": "https://i.ytimg.com/vi/xGVdAlxlp18/hqdefault.jpg",
-                "duration": {
-                    "total": 590,
-                    "display": "9:50"
-                },
-                "idx": 0,
-                "addedAt": 1653812006991,
-                "addedBy": "Guest"
-            },
-            {
-                "id": "EUxv3AAaK_Y",
-                "title": "Blue Bossa (Remastered)",
-                "imgUrl": "https://i.ytimg.com/vi/EUxv3AAaK_Y/hqdefault.jpg",
-                "duration": {
-                    "total": 483,
-                    "display": "8:03"
-                },
-                "idx": 3,
-                "addedAt": 1653812028520,
-                "addedBy": "Guest"
-            },
-            {
-                "id": "zTVlrOk9a8M",
-                "title": "Autumn Leaves",
-                "imgUrl": "https://i.ytimg.com/vi/zTVlrOk9a8M/hqdefault.jpg",
-                "duration": {
-                    "total": 423,
-                    "display": "7:03"
-                },
-                "idx": 0,
-                "addedAt": 1653812051641,
-                "addedBy": "Guest"
-            },
-            {
-                "id": "8xNbqG9PtyE",
-                "title": "Four",
-                "imgUrl": "https://i.ytimg.com/vi/8xNbqG9PtyE/hqdefault.jpg",
-                "duration": {
-                    "total": 436,
-                    "display": "7:16"
-                },
-                "idx": 0,
-                "addedAt": 1653812125657,
-                "addedBy": "Guest"
-            },
-            {
-                "id": "3MkUvZUTFUc",
-                "title": "Sonny Rollins Quartet with John Coltrane - Tenor Madness",
-                "imgUrl": "https://i.ytimg.com/vi/3MkUvZUTFUc/hqdefault.jpg",
-                "duration": {
-                    "total": 747,
-                    "display": "12:27"
-                },
-                "idx": 0,
-                "addedAt": 1653812158408,
-                "addedBy": "Guest"
-            },
-            {
-                "id": "xu0L3tB_9zw",
-                "title": "Joe Pass - Chloe",
-                "imgUrl": "https://i.ytimg.com/vi/xu0L3tB_9zw/hqdefault.jpg",
-                "duration": {
-                    "total": 324,
-                    "display": "5:24"
-                },
-                "idx": 0,
-                "addedAt": 1653812166936,
-                "addedBy": "Guest"
-            },
-            {
-                "id": "UA2XIWZxMKM",
-                "title": "SONNY ROLLINS.St. Thomas",
-                "imgUrl": "https://i.ytimg.com/vi/UA2XIWZxMKM/hqdefault.jpg",
-                "duration": {
-                    "total": 409,
-                    "display": "6:49"
-                },
-                "idx": 0,
-                "addedAt": 1653812174283,
-                "addedBy": "Guest"
-            },
-            {
-                "id": "Hp5B64jXbu0",
-                "title": "Chick Corea - Windows",
-                "imgUrl": "https://i.ytimg.com/vi/Hp5B64jXbu0/hqdefault.jpg",
-                "duration": {
-                    "total": 195,
-                    "display": "3:15"
-                },
-                "idx": 0,
-                "addedAt": 1653812188711,
-                "addedBy": "Guest"
-            },
-            {
-                "id": "zDCjc0jjgHw",
-                "title": "Art Pepper - Four Brothers",
-                "imgUrl": "https://i.ytimg.com/vi/zDCjc0jjgHw/hqdefault.jpg",
-                "duration": {
-                    "total": 174,
-                    "display": "2:54"
-                },
-                "idx": 0,
-                "addedAt": 1653812224370,
-                "addedBy": "Guest"
-            }
-        ],
-        "_id": "Ryn3M"
+        // "name": "State of Jazz",
+        // "description": "New jazz for open minds. Cover: Jean Carn",
+        // "imgUrl": "https://res.cloudinary.com/dc3nhq1gd/image/upload/v1653812686/xbrsadbiusc6975jxneo.jpg",
+        // "tags": ["Jazz"],
+        // "createdAt": 1653812703630,
+        // "createdBy": {
+        //     "_id": "u100",
+        //     "fullname": "UpBeat"
+        // },
+        // "songs": [],
+        // "_id": "X5JA9"
     },
     {
-        "name": "Jazz in the Background",
-        "description": "Soft jazz for all your activities.",
-        "imgUrl": "https://res.cloudinary.com/dc3nhq1gd/image/upload/v1653812642/lpelp2tr2erb2qh7iawg.jpg",
-        "tags": ["Jazz"],
-        "createdAt": 1653812643777,
-        "createdBy": {
-            "_id": "u100",
-            "fullname": "UpBeat"
-        },
-        "songs": [],
-        "_id": "z2oTx"
+        // "name": "Jazz Classics Blue Note Edition",
+        // "description": "The best music from one of the greatest jazz labels.",
+        // "imgUrl": "https://res.cloudinary.com/dc3nhq1gd/image/upload/v1653812793/y1r9gbatd8aqwruitrlg.jpg",
+        // "tags": ["Jazz"],
+        // "createdAt": 1653812801685,
+        // "createdBy": {
+        //     "_id": "u100",
+        //     "fullname": "UpBeat"
+        // },
+        // "songs": [],
+        // "_id": "dgwaB"
     },
     {
-        "name": "State of Jazz",
-        "description": "New jazz for open minds. Cover: Jean Carn",
-        "imgUrl": "https://res.cloudinary.com/dc3nhq1gd/image/upload/v1653812686/xbrsadbiusc6975jxneo.jpg",
-        "tags": ["Jazz"],
-        "createdAt": 1653812703630,
-        "createdBy": {
-            "_id": "u100",
-            "fullname": "UpBeat"
-        },
-        "songs": [],
-        "_id": "X5JA9"
-    },
-    {
-        "name": "Jazz Classics Blue Note Edition",
-        "description": "The best music from one of the greatest jazz labels.",
-        "imgUrl": "https://res.cloudinary.com/dc3nhq1gd/image/upload/v1653812793/y1r9gbatd8aqwruitrlg.jpg",
-        "tags": ["Jazz"],
-        "createdAt": 1653812801685,
-        "createdBy": {
-            "_id": "u100",
-            "fullname": "UpBeat"
-        },
-        "songs": [],
-        "_id": "dgwaB"
-    },
-    {
-        "name": "Good Morning Jazz",
-        "description": "Jazz for breakfast to start your day right.",
-        "imgUrl": "https://res.cloudinary.com/dc3nhq1gd/image/upload/v1653812867/vjuyi9wewlflyotnfbym.jpg",
-        "tags": ["Jazz"],
-        "createdAt": 1653812871106,
-        "createdBy": {
-            "_id": "u100",
-            "fullname": "UpBeat"
-        },
-        "songs": [],
-        "_id": "BgXr3"
+        // "name": "Good Morning Jazz",
+        // "description": "Jazz for breakfast to start your day right.",
+        // "imgUrl": "https://res.cloudinary.com/dc3nhq1gd/image/upload/v1653812867/vjuyi9wewlflyotnfbym.jpg",
+        // "tags": ["Jazz"],
+        // "createdAt": 1653812871106,
+        // "createdBy": {
+        //     "_id": "u100",
+        //     "fullname": "UpBeat"
+        // },
+        // "songs": [],
+        // "_id": "BgXr3"
     },
     {
         "name": "Heavenly music",
@@ -672,21 +672,21 @@ export const PLAYLIST_DATA = [
 
     ,
 
-    {
-        "name": "Kids",
-        "description": "",
-        "imgUrl": "https://res.cloudinary.com/dc3nhq1gd/image/upload/v1653810514/dms0ehg3xxm6bpj3ffy7.jpg",
-        "tags": ["New Releases", "Israeli"],
-        "createdAt": 1653810560710,
-        "createdBy": {
-            "_id": "u100",
-            "fullname": "Noga Erez"
-        },
-        "songs": [],
-        "_id": "4NzeC"
-    }
+    // {
+    //     "name": "Kids",
+    //     "description": "",
+    //     "imgUrl": "https://res.cloudinary.com/dc3nhq1gd/image/upload/v1653810514/dms0ehg3xxm6bpj3ffy7.jpg",
+    //     "tags": ["New Releases", "Israeli"],
+    //     "createdAt": 1653810560710,
+    //     "createdBy": {
+    //         "_id": "u100",
+    //         "fullname": "Noga Erez"
+    //     },
+    //     "songs": [],
+    //     "_id": "4NzeC"
+    // }
 
-    ,
+    // ,
 
     {
         "name": "Justice",
@@ -980,177 +980,177 @@ export const PLAYLIST_DATA = [
 
     ,
 
+    // {
+    //     "name": "60's Greatest Hits",
+    //     "description": "",
+    //     "imgUrl": "https://res.cloudinary.com/dc3nhq1gd/image/upload/v1653813064/ads4mt0egz6hxsfobu58.jpg",
+    //     "tags": ["decades"],
+    //     "createdAt": 1653813084910,
+    //     "createdBy": {
+    //         "_id": "u100",
+    //         "fullname": "Upbeat"
+    //     },
+    //     "songs": [],
+    //     "_id": "j19bk"
+    // },
     {
-        "name": "60's Greatest Hits",
-        "description": "",
-        "imgUrl": "https://res.cloudinary.com/dc3nhq1gd/image/upload/v1653813064/ads4mt0egz6hxsfobu58.jpg",
-        "tags": ["decades"],
-        "createdAt": 1653813084910,
-        "createdBy": {
-            "_id": "u100",
-            "fullname": "Upbeat"
-        },
-        "songs": [],
-        "_id": "j19bk"
-    },
-    {
-        "name": "Israeli mix",
-        "description": "A mix of israeli songs",
-        "imgUrl": "https://res.cloudinary.com/dc3nhq1gd/image/upload/v1653811964/yaeiv4zexndi6zsmoexo.webp",
-        "songs": [
-            {
-                "id": "Y0KxZz5k-RE",
-                "title": "שלמה ארצי - תתארו לכם (קליפ)",
-                "imgUrl": "https://i.ytimg.com/vi/Y0KxZz5k-RE/hqdefault.jpg",
-                "duration": {
-                    "total": 225,
-                    "display": "3:45"
-                },
-                "idx": 1
-            },
-            {
-                "id": "-BR3ziVDazM",
-                "title": "איך אפשר שלא - ג'יין בורדו",
-                "imgUrl": "https://i.ytimg.com/vi/-BR3ziVDazM/hqdefault.jpg",
-                "duration": {
-                    "total": 247,
-                    "display": "4:07"
-                },
-                "idx": 1,
-                "addedAt": 1653810899880,
-                "addedBy": "Guest"
-            },
-            {
-                "id": "OF-ThxuT9O0",
-                "title": "עינב - ג'יין בורדו",
-                "imgUrl": "https://i.ytimg.com/vi/OF-ThxuT9O0/hqdefault.jpg",
-                "duration": {
-                    "total": 242,
-                    "display": "4:02"
-                },
-                "idx": 2,
-                "addedAt": 1653810900642,
-                "addedBy": "Guest"
-            },
-            {
-                "id": "ltLr6Udp1n4",
-                "title": "וויסקי - ג׳יין בורדו",
-                "imgUrl": "https://i.ytimg.com/vi/ltLr6Udp1n4/hqdefault.jpg",
-                "duration": {
-                    "total": 249,
-                    "display": "4:09"
-                },
-                "idx": 3,
-                "addedAt": 1653810902640,
-                "addedBy": "Guest"
-            },
-            {
-                "id": "D-DeH1KTwN4",
-                "title": "עומר אדם - חברות שלך Omer Adam - Your friends - Haverot Shelah",
-                "imgUrl": "https://i.ytimg.com/vi/D-DeH1KTwN4/hqdefault.jpg",
-                "duration": {
-                    "total": 207,
-                    "display": "3:27"
-                },
-                "idx": 5,
-                "addedAt": 1653811060336,
-                "addedBy": "Guest"
-            },
-            {
-                "id": "kVPnv2d_u5Y",
-                "title": "שני משוגעים - עומר אדם - מילים - Lyrics",
-                "imgUrl": "https://i.ytimg.com/vi/kVPnv2d_u5Y/hqdefault.jpg",
-                "duration": {
-                    "total": 171,
-                    "display": "2:51"
-                },
-                "idx": 0,
-                "addedAt": 1653811237418,
-                "addedBy": "Guest"
-            },
-            {
-                "id": "hBlEx2bIRNI",
-                "title": "נעמי שמר - על כל אלה",
-                "imgUrl": "https://i.ytimg.com/vi/hBlEx2bIRNI/hqdefault.jpg",
-                "duration": {
-                    "total": 239,
-                    "display": "3:59"
-                },
-                "idx": 0,
-                "addedAt": 1653811427164,
-                "addedBy": "Guest"
-            },
-            {
-                "id": "DV55unut3oI",
-                "title": "מוניקה סקס - מכה אפורה (קליפ)",
-                "imgUrl": "https://i.ytimg.com/vi/DV55unut3oI/hqdefault.jpg",
-                "duration": {
-                    "total": 256,
-                    "display": "4:16"
-                },
-                "idx": 0,
-                "addedAt": 1653811492036,
-                "addedBy": "Guest"
-            },
-            {
-                "id": "QgsLpE4ULfA",
-                "title": "מוקי - ילד של אבא",
-                "imgUrl": "https://i.ytimg.com/vi/QgsLpE4ULfA/hqdefault.jpg",
-                "duration": {
-                    "total": 246,
-                    "display": "4:06"
-                },
-                "idx": 0,
-                "addedAt": 1653811681964,
-                "addedBy": "Guest"
-            },
-            {
-                "id": "0SlAGZMPmVA",
-                "title": "אריק ברמן - המתוקות האחרונות ✫ האלבום הראשון",
-                "imgUrl": "https://i.ytimg.com/vi/0SlAGZMPmVA/hqdefault.jpg",
-                "duration": {
-                    "total": 188,
-                    "display": "3:08"
-                },
-                "idx": 0,
-                "addedAt": 1653811713372,
-                "addedBy": "Guest"
-            },
-            {
-                "id": "XO4uzmThWKQ",
-                "title": "אריק ברמן- הגשמה עצמית",
-                "imgUrl": "https://i.ytimg.com/vi/XO4uzmThWKQ/hqdefault.jpg",
-                "duration": {
-                    "total": 237,
-                    "display": "3:57"
-                },
-                "idx": 2,
-                "addedAt": 1653811720874,
-                "addedBy": "Guest"
-            }
-        ],
-        "tags": ["Israeli"],
-        "createdAt": 1653810863815,
-        "createdBy": {
-            "_id": "liyrgewfui",
-            "fullname": "Yaron biton"
-        },
-        "_id": "GcXGt"
+        // "name": "Israeli mix",
+        // "description": "A mix of israeli songs",
+        // "imgUrl": "https://res.cloudinary.com/dc3nhq1gd/image/upload/v1653811964/yaeiv4zexndi6zsmoexo.webp",
+        // "songs": [
+        //     {
+        //         "id": "Y0KxZz5k-RE",
+        //         "title": "שלמה ארצי - תתארו לכם (קליפ)",
+        //         "imgUrl": "https://i.ytimg.com/vi/Y0KxZz5k-RE/hqdefault.jpg",
+        //         "duration": {
+        //             "total": 225,
+        //             "display": "3:45"
+        //         },
+        //         "idx": 1
+        //     },
+        //     {
+        //         "id": "-BR3ziVDazM",
+        //         "title": "איך אפשר שלא - ג'יין בורדו",
+        //         "imgUrl": "https://i.ytimg.com/vi/-BR3ziVDazM/hqdefault.jpg",
+        //         "duration": {
+        //             "total": 247,
+        //             "display": "4:07"
+        //         },
+        //         "idx": 1,
+        //         "addedAt": 1653810899880,
+        //         "addedBy": "Guest"
+        //     },
+        //     {
+        //         "id": "OF-ThxuT9O0",
+        //         "title": "עינב - ג'יין בורדו",
+        //         "imgUrl": "https://i.ytimg.com/vi/OF-ThxuT9O0/hqdefault.jpg",
+        //         "duration": {
+        //             "total": 242,
+        //             "display": "4:02"
+        //         },
+        //         "idx": 2,
+        //         "addedAt": 1653810900642,
+        //         "addedBy": "Guest"
+        //     },
+        //     {
+        //         "id": "ltLr6Udp1n4",
+        //         "title": "וויסקי - ג׳יין בורדו",
+        //         "imgUrl": "https://i.ytimg.com/vi/ltLr6Udp1n4/hqdefault.jpg",
+        //         "duration": {
+        //             "total": 249,
+        //             "display": "4:09"
+        //         },
+        //         "idx": 3,
+        //         "addedAt": 1653810902640,
+        //         "addedBy": "Guest"
+        //     },
+        //     {
+        //         "id": "D-DeH1KTwN4",
+        //         "title": "עומר אדם - חברות שלך Omer Adam - Your friends - Haverot Shelah",
+        //         "imgUrl": "https://i.ytimg.com/vi/D-DeH1KTwN4/hqdefault.jpg",
+        //         "duration": {
+        //             "total": 207,
+        //             "display": "3:27"
+        //         },
+        //         "idx": 5,
+        //         "addedAt": 1653811060336,
+        //         "addedBy": "Guest"
+        //     },
+        //     {
+        //         "id": "kVPnv2d_u5Y",
+        //         "title": "שני משוגעים - עומר אדם - מילים - Lyrics",
+        //         "imgUrl": "https://i.ytimg.com/vi/kVPnv2d_u5Y/hqdefault.jpg",
+        //         "duration": {
+        //             "total": 171,
+        //             "display": "2:51"
+        //         },
+        //         "idx": 0,
+        //         "addedAt": 1653811237418,
+        //         "addedBy": "Guest"
+        //     },
+        //     {
+        //         "id": "hBlEx2bIRNI",
+        //         "title": "נעמי שמר - על כל אלה",
+        //         "imgUrl": "https://i.ytimg.com/vi/hBlEx2bIRNI/hqdefault.jpg",
+        //         "duration": {
+        //             "total": 239,
+        //             "display": "3:59"
+        //         },
+        //         "idx": 0,
+        //         "addedAt": 1653811427164,
+        //         "addedBy": "Guest"
+        //     },
+        //     {
+        //         "id": "DV55unut3oI",
+        //         "title": "מוניקה סקס - מכה אפורה (קליפ)",
+        //         "imgUrl": "https://i.ytimg.com/vi/DV55unut3oI/hqdefault.jpg",
+        //         "duration": {
+        //             "total": 256,
+        //             "display": "4:16"
+        //         },
+        //         "idx": 0,
+        //         "addedAt": 1653811492036,
+        //         "addedBy": "Guest"
+        //     },
+        //     {
+        //         "id": "QgsLpE4ULfA",
+        //         "title": "מוקי - ילד של אבא",
+        //         "imgUrl": "https://i.ytimg.com/vi/QgsLpE4ULfA/hqdefault.jpg",
+        //         "duration": {
+        //             "total": 246,
+        //             "display": "4:06"
+        //         },
+        //         "idx": 0,
+        //         "addedAt": 1653811681964,
+        //         "addedBy": "Guest"
+        //     },
+        //     {
+        //         "id": "0SlAGZMPmVA",
+        //         "title": "אריק ברמן - המתוקות האחרונות ✫ האלבום הראשון",
+        //         "imgUrl": "https://i.ytimg.com/vi/0SlAGZMPmVA/hqdefault.jpg",
+        //         "duration": {
+        //             "total": 188,
+        //             "display": "3:08"
+        //         },
+        //         "idx": 0,
+        //         "addedAt": 1653811713372,
+        //         "addedBy": "Guest"
+        //     },
+        //     {
+        //         "id": "XO4uzmThWKQ",
+        //         "title": "אריק ברמן- הגשמה עצמית",
+        //         "imgUrl": "https://i.ytimg.com/vi/XO4uzmThWKQ/hqdefault.jpg",
+        //         "duration": {
+        //             "total": 237,
+        //             "display": "3:57"
+        //         },
+        //         "idx": 2,
+        //         "addedAt": 1653811720874,
+        //         "addedBy": "Guest"
+        //     }
+        // ],
+        // "tags": ["Israeli"],
+        // "createdAt": 1653810863815,
+        // "createdBy": {
+        //     "_id": "liyrgewfui",
+        //     "fullname": "Yaron biton"
+        // },
+        // "_id": "GcXGt"
     },
 
-    {
-        "name": "ים תיכוני",
-        "description": "",
-        "imgUrl": "https://res.cloudinary.com/dc3nhq1gd/image/upload/v1653812680/jlsrlfqgqixot5pirdjx.jpg",
-        "tags": ["Israeli"],
-        "createdAt": 1653812586018,
-        "createdBy": {
-            "_id": "u100",
-            "fullname": "Elran gueta"
-        },
-        "songs": [],
-        "_id": "qcZnd"
-    },
+    // {
+    //     "name": "ים תיכוני",
+    //     "description": "",
+    //     "imgUrl": "https://res.cloudinary.com/dc3nhq1gd/image/upload/v1653812680/jlsrlfqgqixot5pirdjx.jpg",
+    //     "tags": ["Israeli"],
+    //     "createdAt": 1653812586018,
+    //     "createdBy": {
+    //         "_id": "u100",
+    //         "fullname": "Elran gueta"
+    //     },
+    //     "songs": [],
+    //     "_id": "qcZnd"
+    // },
     {
         "name": "old israeli",
         "description": "",
