@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Fancify/static/css/main.e23199cf.css",
+    "main.css": "/Fancify/static/css/main.8e14a6b0.css",
     "main.js": "/Fancify/static/js/main.4a95bd65.js",
     "static/media/CircularStd-Light.otf": "/Fancify/static/media/CircularStd-Light.4a1a0bfcc3a53847a945.otf",
     "static/media/CircularStd-Bold.otf": "/Fancify/static/media/CircularStd-Bold.5c4514a8399ec0064b9b.otf",
@@ -9,11 +9,11 @@
     "static/media/GothamMedium.ttf": "/Fancify/static/media/GothamMedium.0a910c0b9d50be6aa3dc.ttf",
     "static/media/GothamBold.ttf": "/Fancify/static/media/GothamBold.108854bb27dee2dce854.ttf",
     "index.html": "/Fancify/index.html",
-    "main.e23199cf.css.map": "/Fancify/static/css/main.e23199cf.css.map",
+    "main.8e14a6b0.css.map": "/Fancify/static/css/main.8e14a6b0.css.map",
     "main.4a95bd65.js.map": "/Fancify/static/js/main.4a95bd65.js.map"
   },
   "entrypoints": [
-    "static/css/main.e23199cf.css",
+    "static/css/main.8e14a6b0.css",
     "static/js/main.4a95bd65.js"
   ]
 }
