@@ -9,7 +9,6 @@ export const playlistService = {
     getTags,
 }
 
-
 async function query(filterBy = null) {
     const playlists = await firebaseService.getDocuments()
     return Promise.resolve(playlists)

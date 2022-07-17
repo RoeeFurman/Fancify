@@ -8,10 +8,29 @@ import { PlaylistDetails } from "../components/PlaylistDetails";
 import { MdHomeFilled } from "react-icons/md";
 import { RiSearchLine } from "react-icons/ri";
 import { Login } from "../components/Login";
+import { useEffect } from "react";
+import { onLogin } from "../store/actions/user.actions";
+import { userService } from "../services/UserService";
+import { useDispatch, useSelector } from "react-redux";
 
 export const HomeScreen = () => {
   const [isMenueOpen, setMenuOpen] = useState(false);
   const [isLoginMenuOpen, setLoginMenuOpen] = useState(false);
+  const [loggedUser, setUser] = useState("");
+  const { user } = useSelector((storeState) => storeState.userModule);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    getLoggedUser();
+  }, []);
+
+  const getLoggedUser = async () => {
+    const user = await userService.getUser();
+    dispatch(onLogin(user));
+    setUser(user);
+    console.log(user);
+  };
 
   return (
     <section className="home-screen">
@@ -61,30 +80,39 @@ export const HomeScreen = () => {
       <div className="main-screen">
         <header>
           <div className="login">
-            <span>Log in</span>
-            <button onClick={() => setLoginMenuOpen(!isLoginMenuOpen)}>
-              {isLoginMenuOpen ? (
-                <svg
-                  role="img"
-                  height="16"
-                  width="16"
-                  viewBox="0 0 16 16"
-                  fill="white"
-                >
-                  <path d="M14 6l-6 6-6-6h12z"></path>
-                </svg>
-              ) : (
-                <svg
-                  role="img"
-                  height="16"
-                  width="16"
-                  fill="white"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M14 10L8 4l-6 6h12z"></path>
-                </svg>
-              )}
-            </button>
+            {user && (
+              <>
+                <img
+                  className="profile-pic"
+                  src={user.imgUrl}
+                  alt="Profile pic"
+                />
+                <span>{user.username}</span>
+                <button onClick={() => setLoginMenuOpen(!isLoginMenuOpen)}>
+                  {isLoginMenuOpen ? (
+                    <svg
+                      role="img"
+                      height="16"
+                      width="16"
+                      viewBox="0 0 16 16"
+                      fill="white"
+                    >
+                      <path d="M14 6l-6 6-6-6h12z"></path>
+                    </svg>
+                  ) : (
+                    <svg
+                      role="img"
+                      height="16"
+                      width="16"
+                      fill="white"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M14 10L8 4l-6 6h12z"></path>
+                    </svg>
+                  )}
+                </button>
+              </>
+            )}
           </div>
         </header>
 

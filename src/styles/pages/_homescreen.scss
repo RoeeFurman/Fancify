@@ -4,6 +4,7 @@
         "nav main main"
         "nav main main";
     grid-template-columns: 230px 1fr;
+    grid-template-rows: max-content;
 
     @media (max-width: 760px) {
         display: flex;
@@ -55,6 +56,7 @@
         grid-area: 'main';
         overflow-y: scroll;
         @include layout;
+        grid-template-rows: max-content;
 
         .search-bar {
             height: 64px;
@@ -72,6 +74,12 @@
             justify-content: flex-end;
             align-items: center;
 
+            .profile-pic {
+                height: 28px;
+                width: 28px;
+                border-radius: 50%;
+            }
+
             .login {
                 height: 32px;
                 background-color: black;
@@ -80,7 +88,8 @@
                 align-items: center;
                 min-width: 100px;
                 justify-content: space-between;
-                padding: 0 10px;
+                padding: 2px;
+                gap: 8px;
 
                 button {
                     background: none;

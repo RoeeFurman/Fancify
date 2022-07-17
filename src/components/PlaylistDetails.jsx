@@ -7,6 +7,7 @@ import getAverageColor from "get-average-color";
 import { BsClock } from "react-icons/bs";
 import { SearchSection } from "./SearchSection";
 import { firebaseService } from "../services/firebaseService";
+import { onLogin } from "../store/actions/user.actions";
 
 export const PlaylistDetails = () => {
   const [currPlaylist, setCurrPlaylist] = useState(null);
@@ -17,6 +18,7 @@ export const PlaylistDetails = () => {
   const { song, isPlaying } = useSelector(
     (storeState) => storeState.audioPlayerModule
   );
+  const { user } = useSelector((storeState) => storeState.userModule);
 
   useEffect(() => {
     getPlaylistDetails();
@@ -39,7 +41,7 @@ export const PlaylistDetails = () => {
   };
 
   const setVideoId = async (newSong) => {
-    if (newSong.id === song.id) return;
+    if (newSong?.id === song?.id) return;
     dispatch(setSong(newSong));
   };
 
@@ -93,6 +95,20 @@ export const PlaylistDetails = () => {
     );
   };
 
+  const toggleLiked = () => {
+    if (user.likedPlaylists.includes(currPlaylist.id)) {
+      console.log("jo", currPlaylist.id);
+      const liked = user.likedPlaylists;
+      const idx = liked.findIndex((plst) => plst.id === currPlaylist.id);
+      liked.splice(idx, 1);
+    } else {
+      console.log("go", currPlaylist.id);
+      user.likedPlaylists.push(currPlaylist.id);
+    }
+    console.log(user);
+    dispatch(onLogin(user));
+  };
+
   return (
     <section className="playlist-details">
       {currPlaylist && (
@@ -118,26 +134,33 @@ export const PlaylistDetails = () => {
         >
           <svg
             role="img"
-            height="16"
-            width="16"
+            height="24"
+            width="24"
             className="play-svg"
             viewBox="0 0 16 16"
           >
             <path d="M3 1.713a.7.7 0 011.05-.607l10.89 6.288a.7.7 0 010 1.212L4.05 14.894A.7.7 0 013 14.288V1.713z"></path>
           </svg>
         </div>
-        {currPlaylist?.isLiked ? (
-          <svg role="img" height="32" width="32" viewBox="0 0 24 24">
+        {user?.likedPlaylists?.includes(currPlaylist?.id) ? (
+          <svg
+            onClick={() => toggleLiked()}
+            role="img"
+            height="32"
+            width="32"
+            viewBox="0 0 24 24"
+            fill="#1fdf64"
+          >
             <path d="M8.667 1.912a6.257 6.257 0 00-7.462 7.677c.24.906.683 1.747 1.295 2.457l7.955 9.482a2.015 2.015 0 003.09 0l7.956-9.482a6.188 6.188 0 001.382-5.234l-.49.097.49-.099a6.303 6.303 0 00-5.162-4.98h-.002a6.24 6.24 0 00-5.295 1.65.623.623 0 01-.848 0 6.257 6.257 0 00-2.91-1.568z"></path>
           </svg>
         ) : (
           <svg
+            onClick={() => toggleLiked()}
             fill="#cbbbb9"
             role="img"
             height="32"
             width="32"
             viewBox="0 0 24 24"
-            class="Svg-sc-1bi12j5-0 EQkJl"
           >
             <path d="M5.21 1.57a6.757 6.757 0 016.708 1.545.124.124 0 00.165 0 6.741 6.741 0 015.715-1.78l.004.001a6.802 6.802 0 015.571 5.376v.003a6.689 6.689 0 01-1.49 5.655l-7.954 9.48a2.518 2.518 0 01-3.857 0L2.12 12.37A6.683 6.683 0 01.627 6.714 6.757 6.757 0 015.21 1.57zm3.12 1.803a4.757 4.757 0 00-5.74 3.725l-.001.002a4.684 4.684 0 001.049 3.969l.009.01 7.958 9.485a.518.518 0 00.79 0l7.968-9.495a4.688 4.688 0 001.049-3.965 4.803 4.803 0 00-3.931-3.794 4.74 4.74 0 00-4.023 1.256l-.008.008a2.123 2.123 0 01-2.9 0l-.007-.007a4.757 4.757 0 00-2.214-1.194z"></path>
           </svg>
@@ -148,7 +171,6 @@ export const PlaylistDetails = () => {
           height="32"
           width="32"
           viewBox="0 0 24 24"
-          class="Svg-sc-1bi12j5-0 EQkJl"
         >
           <path d="M4.5 13.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm15 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm-7.5 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
         </svg>
