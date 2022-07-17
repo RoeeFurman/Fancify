@@ -5,7 +5,7 @@ export const userService = {
 
 async function getUser() {
   return Promise.resolve({
-    username: 'Roee',
+    username: 'Roee Furman',
     password: '1234',
     isAdmin: true,
     likedSongs: ['H5v3kku4y6Q'],

@@ -97,12 +97,10 @@ export const PlaylistDetails = () => {
 
   const toggleLiked = () => {
     if (user.likedPlaylists.includes(currPlaylist.id)) {
-      console.log("jo", currPlaylist.id);
       const liked = user.likedPlaylists;
       const idx = liked.findIndex((plst) => plst.id === currPlaylist.id);
       liked.splice(idx, 1);
     } else {
-      console.log("go", currPlaylist.id);
       user.likedPlaylists.push(currPlaylist.id);
     }
     console.log(user);
