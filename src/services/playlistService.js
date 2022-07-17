@@ -3,39 +3,17 @@ import { firebaseService } from './firebaseService'
 
 export const playlistService = {
     query,
-    // getById,
-    // save,
-    // makeDummy,
     addSong,
     toggleLike,
     removeSong,
     getTags,
-    // removePlaylist,
-    // onWatchPlaylist,
 }
 
-// window.ps = playlistService
 
 async function query(filterBy = null) {
-    // console.log('query by', filterBy)
     const playlists = await firebaseService.getDocuments()
-    // const playlists = PLAYLIST_DATA.filter(playlist => playlist.tags.includes(filterBy))
     return Promise.resolve(playlists)
-    // return httpService.get(`playlist/?tags=${filterBy.tags}`)
 }
-
-// async function getById(playlistId, filterBy) {
-//     // console.log(playlistId)
-//     return Promise.resolve(PLAYLIST_DATA.filter(playlist => playlist._id === playlistId))
-//     // return await storageService.get(STORAGE_KEY, playlistId, filterBy)
-//     // return httpService.get(`playlist/${playlistId}`)
-// }
-
-// async function save(playlist, user) {
-//     if (playlist._id) return await httpService.put(`playlist/${playlist._id}`, playlist)
-//     playlist = { ...playlist, tags: ['New Releases'], createdBy: { _id: user._id || '', fullname: user.fullname }, songs: playlist.songs || [] } //when swapping to frontend only, add "createdAt: Date.now()"
-//     return await httpService.post(`playlist/`, playlist)
-// }
 
 async function addSong(song, playlist) {
     if (!playlist.songs.some((currsong) => currsong.id === song.id)) {
@@ -61,15 +39,6 @@ async function toggleLike(id, playlist) {
     return Promise.resolve(playlist)
     // return await httpService.put(`playlist/${playlist._id}`, playlist)
 }
-
-// async function removePlaylist(playlistId) {
-//     return httpService.delete(`playlist/${playlistId}`)
-// }
-
-// function onWatchPlaylist(playlistId, userId) {
-//     socketService.watchPlaylist(playlistId, userId)
-// }
-
 
 async function getTags() {
     return [
@@ -100,4 +69,26 @@ async function getTags() {
 //     storageService.saveDummy()
 // }
 
+
+
+// async function getById(playlistId, filterBy) {
+//     // console.log(playlistId)
+//     return Promise.resolve(PLAYLIST_DATA.filter(playlist => playlist._id === playlistId))
+//     // return await storageService.get(STORAGE_KEY, playlistId, filterBy)
+//     // return httpService.get(`playlist/${playlistId}`)
+// }
+
+// async function save(playlist, user) {
+//     if (playlist._id) return await httpService.put(`playlist/${playlist._id}`, playlist)
+//     playlist = { ...playlist, tags: ['New Releases'], createdBy: { _id: user._id || '', fullname: user.fullname }, songs: playlist.songs || [] } //when swapping to frontend only, add "createdAt: Date.now()"
+//     return await httpService.post(`playlist/`, playlist)
+// }
+
+// async function removePlaylist(playlistId) {
+//     return httpService.delete(`playlist/${playlistId}`)
+// }
+
+// function onWatchPlaylist(playlistId, userId) {
+//     socketService.watchPlaylist(playlistId, userId)
+// }
 
