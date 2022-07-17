@@ -41,6 +41,32 @@
         }
     }
 
+    .playlist-scnd-header {
+        display: flex;
+        padding: 24px 32px;
+        position: relative;
+        align-self: center;
+        align-items: center;
+
+        >* {
+            margin-right: 24px;
+        }
+
+        .play-div {
+            height: 56px;
+            width: 56px;
+            background-color: $main-green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 200px;
+
+            &:hover {
+                transform: scale(1.04);
+            }
+        }
+    }
+
     .playlist-header {
 
         height: 340px;
