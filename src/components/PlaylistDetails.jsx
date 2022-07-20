@@ -35,13 +35,14 @@ export const PlaylistDetails = () => {
 
   const getPlaylistDetails = async () => {
     const playlist = await firebaseService.getDocument("playlists", id);
-
-    dispatch(setMiniPlaylist(playlist.id, 0, playlist.songs, playlist.name));
     setCurrPlaylist(playlist);
   };
 
   const setVideoId = async (newSong) => {
     if (newSong?.id === song?.id) return;
+    dispatch(
+      setMiniPlaylist(currPlaylist.id, 0, currPlaylist.songs, currPlaylist.name)
+    );
     dispatch(setSong(newSong));
   };
 

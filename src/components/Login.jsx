@@ -24,7 +24,24 @@ export const Login = () => {
 
   return (
     <div className="login-cmp">
-      <form className="login-form" onSubmit={onLogin}>
+      <div class="login-form">
+        <h1>Contact me:</h1>
+        <div className="contacts">
+          <a target="_blank" href="https://www.facebook.com/roee.furman/">
+            <i class="fa fa-facebook"></i>
+          </a>
+          <a
+            target="_blank"
+            href="https://www.linkedin.com/in/roee-furman-16164711a/"
+          >
+            <i class="fa fa-linkedin"></i>
+          </a>
+          <a target="_blank" href="https://github.com/RoeeFurman">
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+      </div>
+      {/* <form className="login-form" onSubmit={onLogin}>
         <h1>Log In to continue</h1>
         <div className="inputs">
           <input
@@ -47,7 +64,7 @@ export const Login = () => {
           />
         </div>
         <button>Log in</button>
-      </form>
+      </form> */}
     </div>
   );
 };

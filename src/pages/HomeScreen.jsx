@@ -5,6 +5,7 @@ import { Library } from "../components/Library";
 import { Collection } from "../components/Collection";
 import { GenreList } from "../components/GenreList";
 import { SearchPage } from "../pages/SearchPage";
+import { CreateNewPlaylist } from "../components/CreateNewPlaylist";
 import { PlaylistDetails } from "../components/PlaylistDetails";
 import { MdHomeFilled } from "react-icons/md";
 import { RiSearchLine } from "react-icons/ri";
@@ -67,6 +68,21 @@ export const HomeScreen = () => {
           </svg>
           Your Library
         </Link>
+        <Link to="/screen/createnewplaylist" className="create-playlist-div">
+          <div className="btn-container">
+            <svg
+              role="img"
+              height="12"
+              width="12"
+              aria-hidden="true"
+              viewBox="0 0 16 16"
+              className="new-playlist-btn"
+            >
+              <path d="M15.25 8a.75.75 0 01-.75.75H8.75v5.75a.75.75 0 01-1.5 0V8.75H1.5a.75.75 0 010-1.5h5.75V1.5a.75.75 0 011.5 0v5.75h5.75a.75.75 0 01.75.75z"></path>
+            </svg>
+          </div>
+          Create Playlist
+        </Link>
       </nav>
       <button
         className="little-menu-btn"
@@ -102,7 +118,8 @@ export const HomeScreen = () => {
                   alt="Profile pic"
                 />
                 <span>{user.username}</span>
-                <button onClick={() => setLoginMenuOpen(!isLoginMenuOpen)}>
+                {/* <button onClick={() => setLoginMenuOpen(!isLoginMenuOpen)}> */}
+                <button>
                   {isLoginMenuOpen ? (
                     <svg
                       role="img"
@@ -145,6 +162,10 @@ export const HomeScreen = () => {
         <Route path="/screen/collection">
           <Collection />
         </Route>
+        <Route path="/screen/createnewplaylist">
+          <CreateNewPlaylist />
+        </Route>
+        <div id="product-component-1658216423685"></div>
       </div>
       {isLoginMenuOpen && <Login />}
 

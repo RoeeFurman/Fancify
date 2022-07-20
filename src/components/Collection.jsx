@@ -26,6 +26,7 @@ export const Collection = () => {
 
   return (
     <div className="library">
+      <h1>Liked Playlists</h1>
       <PlaylistsList playlists={data} />
     </div>
   );
